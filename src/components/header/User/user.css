@@ -1,0 +1,20 @@
+.dropDown{
+  top: 80px;
+  color: white;
+  background-color: #393E46;
+  gap:10px;
+  flex-direction:column;
+  padding:0.5rem 0.5rem;
+  z-index:100;
+  border: 1px solid black;
+}
+
+.navItem{
+  cursor:pointer;
+  padding: 0.1rem;
+  transition: color 0.2s ease-in-out
+}
+
+.navItem:hover{
+  color: #FFD369;
+}
