@@ -1,29 +1,31 @@
 import React from 'react';
-import { Dropdown, Avatar } from 'flowbite-react';
+import {useState} from 'react'
+import './user.css'
 
 const User = () => {
+
+  const [display, setDisplay] = useState('none')
+
+  function changeDisplay(){
+    if(display === 'none'){
+      setDisplay('flex')
+    }else{
+      setDisplay('none')
+    }
+  }
+
   return (
-    <Dropdown
-    arrowIcon={false}
-    inline={true}
-    label={<Avatar alt="User settings" img="https://flowbite.com/docs/images/people/profile-picture-5.jpg" rounded={true}/>}
-  >
-    <Dropdown.Header>
-      <span className="block text-sm">
-        Bonnie Green
-      </span>
-      <span className="block truncate text-sm font-medium">
-        name@flowbite.com
-      </span>
-    </Dropdown.Header>
-    <Dropdown.Item>
-      Perfil
-    </Dropdown.Item>
-    <Dropdown.Divider />
-    <Dropdown.Item>
-      Cerrar sesion
-    </Dropdown.Item>
-  </Dropdown>
+    <>
+      <div className='userContent-img'>
+        <img onClick={changeDisplay} src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTc3YubX90VNZaT4guYBviMOr2y1J0E9_YEGzcFJg-ucQ&s' style={{width:'54px', borderRadius:'100%', cursor:'pointer'}} alt='user profile pic'/>
+      </div>
+      <div className='dropDown' style={{display, position: 'absolute'}}>
+        <div className='navItem'>Nombre</div>
+        <div className='navItem'>Mail</div>
+        <div className='navItem'>inicia sesion</div>
+        <div className='navItem'>Registrate</div>
+      </div>
+    </>
   );
 }
 
