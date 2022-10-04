@@ -1,8 +1,11 @@
 import React from 'react'
+import Layout from '../layout/Layout'
 
 const Contest = () => {
     return (
-        <div>Contacto</div>
+        <Layout>
+            <div>Contacto</div>
+        </Layout>
     )
 }
 
