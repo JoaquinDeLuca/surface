@@ -1,0 +1,54 @@
+.desktopNavigation{
+  display: none
+}
+
+.mobileNavigation div{
+  font-weight: bold;
+  display: flex;
+  position: absolute;
+  top: 90px;
+  width: 100vw;
+  background-color: rgb(34,40,49);
+  left: 0;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center
+}
+
+.mobileNavigation{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  width:33%;
+}
+
+.mobileNavigation .Hamburguer{
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center
+}
+
+
+@media (min-width: 990px){
+  .desktopNavigation{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    width: 33%;
+  }
+
+  .desktopNavigation div{
+    display:flex;
+    font-weight:bold;
+    gap: 1rem;
+  }
+
+  .desktopNavigation div p:hover{
+    color: #FFD369
+  }
+
+  .mobileNavigation{
+    display: none;
+  }
+}
