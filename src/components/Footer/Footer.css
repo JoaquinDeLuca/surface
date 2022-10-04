@@ -21,6 +21,8 @@
     margin: 2px;
 }
 .Footer-copiright{
+    display: flex;
+    justify-content: center;
     padding-bottom: 12px;
 
 }

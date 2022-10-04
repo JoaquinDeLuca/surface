@@ -44,8 +44,15 @@
     gap: 1rem;
   }
 
+  .desktopNavigation div p{
+    color:white;
+    
+  }
+  .desktopNavigation div p:visited{
+    color: white;
+  }
   .desktopNavigation div p:hover{
-    color: #FFD369
+    color: #FFD369;
   }
 
   .mobileNavigation{
