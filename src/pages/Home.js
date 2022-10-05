@@ -1,11 +1,11 @@
 import React from 'react'
 import Layout from '../layout/Layout'
-import HomePage from '../components/Home/HomePage'
+import ProductosDestacos from '../components/Home/ProductosDestacos'
 
 const Home = () => {
     return (
         <Layout>
-            <HomePage/>
+            <ProductosDestacos />
         </Layout>
     )
 }
