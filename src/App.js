@@ -4,7 +4,9 @@ import Home from './pages/Home'
 import Contact from './pages/Contact'
 import Contest from './pages/Contest'
 import Products from './pages/Products'
-
+import Hoodie from './pages/Hoodie';
+import Tshirt from './pages/Tshirt';
+import Cap from './pages/Cap';
 
 function App() {
   return (
@@ -15,6 +17,9 @@ function App() {
         <Route path='/contact' element={<Contact />} />
         <Route path='/contest' element={<Contest />} />
         <Route path='/products' element={<Products />} />
+        <Route path='/hoodie' element={<Hoodie />} />
+        <Route path='/tshirt' element={<Tshirt />} />
+        <Route path='/cap' element={<Cap />} />
       </Routes>
     </BrowserRouter>
     </>
