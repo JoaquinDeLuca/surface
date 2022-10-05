@@ -5,9 +5,7 @@ export default function Hoodie() {
   return (
 
     <>
-        <Layout>
-            Hoodie
-        </Layout>
+        Hoodie
     </>
   )
 }
