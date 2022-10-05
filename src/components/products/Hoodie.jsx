@@ -1,5 +1,5 @@
 import React from 'react'
-import { useGetHoodieQuery } from '../../features/hoodieAPI'
+
 
 export default function Hoodie() {
     let params = ''
