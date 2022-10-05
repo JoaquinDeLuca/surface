@@ -10,9 +10,8 @@ const hoodie = createApi ({
 
     endpoints: builder => ({
         GetHoodie: builder.query({
-            query: () => 'buzos/'
+            query: (params) => `buzos/${params}`
         })
-
     }),
 
 })
