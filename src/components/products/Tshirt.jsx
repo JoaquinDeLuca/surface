@@ -32,7 +32,7 @@ export default function Tshirt() {
         </div>
         <div className='cardBody'>
           <h3>X nombre</h3>
-          <p>Descripcion: {param.description}</p>
+          <p className='asd'>Descripcion: {param.description}</p>
           <div className='cardData'>
             <p>Stock: {param.stock}</p>
             <p>Precio: ${param.price}</p>
