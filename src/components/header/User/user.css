@@ -18,3 +18,12 @@
 .navItem:hover{
   color: #FFD369;
 }
+
+.userContent-img{
+  display: flex;
+  align-items: center;
+}
+
+.cart{
+  margin-right: 25px;
+}
