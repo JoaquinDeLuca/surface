@@ -1,6 +1,7 @@
 import React from 'react'
 import {useGetTShirtQuery} from '../../features/tShirtAPI'
 import './product.css'
+import { Link } from 'react-router-dom'
 
 
 export default function Tshirt() {
@@ -38,7 +39,7 @@ export default function Tshirt() {
           </div>
           <div className='addCart'>
             <div>Futuro select</div>
-            <div className='buttonAddCart'>Añadir al carrito</div>
+            <Link style={{ textDecoration: "none"}}  to={`/shoppingcart/${param._id}`}><div className='buttonAddCart'>Añadir al carrito</div></Link>
           </div>
         </div>
       </div>
