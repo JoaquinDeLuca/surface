@@ -1,5 +1,5 @@
 import React from 'react'
-import {useGetTShirtQuery} from '../../features/tShirtAPI'
+import {useGetTShirtQuery} from '../../features/actions/tShirtAPI'
 import './product.css'
 import { Link } from 'react-router-dom'
 

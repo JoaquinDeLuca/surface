@@ -1,8 +1,8 @@
-import React, {useState, useEffect} from 'react';
+import React, {useEffect} from 'react';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
-import {useGetTShirtQuery} from '../../../features/tShirtAPI'
+import {useGetTShirtQuery} from '../../../features/actions/tShirtAPI'
 import './Carousel.css'
 
 const Carousel = () => {

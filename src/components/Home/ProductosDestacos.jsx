@@ -1,5 +1,5 @@
 import React from 'react'
-import { useGetHoodieQuery } from '../../features/hoodieAPI'
+import { useGetHoodieQuery } from '../../features/actions/hoodieAPI'
 import PrintProduct from './PrintProduct'
 
 export default function ProductosDestacos() {

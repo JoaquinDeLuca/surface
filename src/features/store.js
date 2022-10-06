@@ -1,8 +1,8 @@
 import { configureStore } from '@reduxjs/toolkit'
-import hoodie from './hoodieAPI'
-import userApi from './userAPI'
-import capApi from './capAPI'
-import tShirt from './tShirtAPI'
+import hoodie from './actions/hoodieAPI'
+import userApi from './actions/userAPI'
+import capApi from './actions/capAPI'
+import tShirt from './actions/tShirtAPI'
 
 
 
