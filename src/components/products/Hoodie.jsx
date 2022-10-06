@@ -1,5 +1,5 @@
 import React from 'react'
-import { useGetHoodieQuery } from '../../features/hoodieAPI';
+import { useGetHoodieQuery } from '../../features/actions/hoodieAPI';
 import './product.css'
 import { Link, useParams } from 'react-router-dom';
 

@@ -2,7 +2,7 @@ import React from 'react'
 
 import './product.css'
 import { Link } from 'react-router-dom'
-import { useReadAllQuery } from '../../features/capAPI'
+import { useReadAllQuery } from '../../features/actions/capAPI'
 
 
 export default function Cap() {
