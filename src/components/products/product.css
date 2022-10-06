@@ -88,8 +88,11 @@
 
 @media (min-width: 768px) {
   .container{
+    width: 90%;
+    margin: 40px auto;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content:flex-start;
   }
   .imgContainer{
     margin: 10px auto;
@@ -104,5 +107,10 @@
   .cardBody{
     width:90%;
     margin: 0 auto 30px;
+  }
+
+  .cardBody > p{
+    height: 90px;
+    font-size:1rem
   }
 }
