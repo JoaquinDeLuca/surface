@@ -31,17 +31,18 @@ const capApi = createApi({
                 body: capRemove
             }),
 
-            updateCap: builder.mutation({
-                query: (capUpdate) => ({
-                    url: 'caps/:id',
-                    method: 'PATCH',
-                    body: capUpdate
-                })
+        }),
+        updateCap: builder.mutation({
+            query: (capUpdate) => ({
+                url: 'caps/:id',
+                method: 'PATCH',
+                body: capUpdate
             })
-        })
+        }),
 
     })
 
 })
 
 export default capApi
+export const { useReadAllQuery, useReadCapQuery, useNewCapMutation, useRemoveCapMutation, useUpdateCapMutation } = capApi
