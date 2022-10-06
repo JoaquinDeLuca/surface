@@ -8,9 +8,8 @@ export default function NavBar() {
 
   return (
     <div className="navbar">
-      <div className="user">
-        <User/>
-      </div>
+      <NavDesktop/>
+      <NavMobile/>
       <div className="brand">
         <div className="brand-img">
         </div>
@@ -18,8 +17,9 @@ export default function NavBar() {
           <h1>Surface</h1>
         </div>
       </div>
-      <NavDesktop/>
-      <NavMobile/>
+      <div className="user">
+        <User/>
+      </div>
     </div>
   )
 }
