@@ -5,7 +5,8 @@
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  height: 85px
+  height: 85px;
+  align-items: center;
 }
 
 .brand{
@@ -25,6 +26,7 @@
 .navLinks2{
   transition: all 0.2s ease-in-out;
   cursor: pointer;
+  color: white;
 }
 
 @media (min-width: 1024px) {
