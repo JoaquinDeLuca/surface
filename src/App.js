@@ -8,22 +8,24 @@ import Hoodie from './pages/Hoodie';
 import Tshirt from './pages/Tshirt';
 import Cap from './pages/Cap';
 import ShoppingCart from './pages/ShoppingCart';
+import Cart from './pages/Cart'
 
 function App() {
   return (
     <>
-    <BrowserRouter>
-      <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/contact' element={<Contact />} />
-        <Route path='/contest' element={<Contest />} />
-        <Route path='/products' element={<Products />} />
-        <Route path='/hoodie' element={<Hoodie />} />
-        <Route path='/tshirt' element={<Tshirt />} />
-        <Route path='/cap' element={<Cap />} />
-        <Route path='/shoppingcart/:id' element={<ShoppingCart />} />
-      </Routes>
-    </BrowserRouter>
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/cart' element={<Cart />} />
+          <Route path='/contact' element={<Contact />} />
+          <Route path='/contest' element={<Contest />} />
+          <Route path='/products' element={<Products />} />
+          <Route path='/hoodie' element={<Hoodie />} />
+          <Route path='/tshirt' element={<Tshirt />} />
+          <Route path='/cap' element={<Cap />} />
+          <Route path='/shoppingcart/:id' element={<ShoppingCart />} />
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }
