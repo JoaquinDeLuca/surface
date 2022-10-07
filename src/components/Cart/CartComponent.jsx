@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux'
 const CartComponent = () => {
     const {items, totalAmount} = useSelector(state => state.cart)
   return (
-    <div>Cart</div>
+    <div>Carrito</div>
   )
 }
 
