@@ -2,15 +2,17 @@ import React from 'react'
 import { useGetHoodieQuery } from '../../features/actions/hoodieAPI';
 import './product.css'
 import { Link, useParams } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { setCart, setPrice } from '../../features/Cart/CartSlice';
 
 export default function Hoodie() {
-
+  const dispatch = useDispatch()
     let params = ''
     const { 
         data: hoodie,
         isLoading, 
         isSuccess,
-        isError
+        
     } = useGetHoodieQuery(params)
 
     let data = [];
@@ -22,7 +24,10 @@ export default function Hoodie() {
         data = hoodie.response
     }
     // console.log(hoodie)
-
+    const addCart = (item) =>{
+      dispatch(setCart(item.target.id))
+      dispatch(setPrice(Number(item.target.title)))
+    }
 
     const PrintHoodie = (hoodie) => {
         return(
@@ -39,7 +44,8 @@ export default function Hoodie() {
                 </div>
                 <div className='addCart'>
                   <div>Futuro select</div>
-                  <Link style={{ textDecoration: "none"}}  to={`/shoppingcart/${hoodie._id}`}><div className='buttonAddCart'>Añadir al carrito</div></Link>
+                  <Link style={{ textDecoration: "none"}}  to={`/shoppingcart/${hoodie._id}`} ><div className='buttonAddCart' >Ver mas</div></Link>
+         <div className='buttonAddCart' title={hoodie.price} id={hoodie._id}  onClick={addCart}>Añadir al carrito</div>
                 </div>
               </div>
             </div>
