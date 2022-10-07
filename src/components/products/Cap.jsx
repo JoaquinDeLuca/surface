@@ -3,10 +3,13 @@ import React from 'react'
 import './product.css'
 import { Link } from 'react-router-dom'
 import { useReadAllQuery } from '../../features/actions/capAPI'
+import { useDispatch } from 'react-redux'
+import { setCart, setPrice } from '../../features/Cart/CartSlice'
 
 
 export default function Cap() {
 
+const dispatch = useDispatch()
 
 const { 
   data: caps,
@@ -19,9 +22,12 @@ if (isSuccess) {
   data = caps.response
 }
 
-console.log(data)
 
 
+const addCart = (item) =>{
+  dispatch(setCart(item.target.id))
+  dispatch(setPrice(Number(item.target.title)))
+}
 
 function generateCard(item){
   return(
@@ -37,13 +43,15 @@ function generateCard(item){
           <p>Precio: ${item.price}</p>
         </div>
         <div className='addCart'>
-          <div>Futuro select</div>
-          <Link style={{ textDecoration: "none"}}  to={`/shoppingcart/${item._id}`}><div className='buttonAddCart'>Añadir al carrito</div></Link>
+        <Link style={{ textDecoration: "none"}}  to={`/shoppingcart/${item._id}`}><div className='buttonAddCart' >Ver mas</div></Link>
+         <div className='buttonAddCart' title={item.price} id={item._id}  onClick={addCart}>Añadir al carrito</div>
         </div>
       </div>
     </div>
   )
 }
+
+
 
   return (
     <div className="container">
