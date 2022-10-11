@@ -7,6 +7,7 @@ import tShirt from './actions/tShirtAPI'
 import authApi from './actions/authAPI'
 //reducers
 import CartReducer from './Cart/CartSlice.jsx'
+import UserStatus from './actions/UserStatus'
 // Persist 
 import { persistReducer } from 'redux-persist'
 import storage from 'redux-persist/lib/storage'
@@ -28,9 +29,8 @@ const store = configureStore({
         [tShirt.reducerPath]: tShirt.reducer,
         [authApi.reducerPath]: authApi.reducer,
 
-
+        user: UserStatus
         cart: persistedReducer
-
 
     },
 
