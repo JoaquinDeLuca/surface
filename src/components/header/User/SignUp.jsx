@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import {useAddUserSignUpMutation} from '../../../features/actions/authAPI.js'
+import './SignUp.css'
 
 export default function SignUp() {
 
@@ -52,18 +53,21 @@ export default function SignUp() {
   }
 
   return (
-    <form actions='' onSubmit={handleSubmit} method='post'>
-      <label for='name'>Nombre:</label>
-      <input type='text' onChange={handleChange} id='name' placeholder='...' name='name'></input>
-      <label for='lastName'>Apellido:</label>
-      <input type='text' onChange={handleChange} id='lastName' placeholder='...' name='lastName'></input>
-      <label for='email'>Correo:</label>
-      <input type='text' onChange={handleChange} id='email' placeholder='ejemplo@ejemplo.com' name='email'></input>
-      <label for='password'>Contraseña:</label>
-      <input type='password' onChange={handleChange}  placeholder='***' id='password' name='password'></input>
-      <label for='photo'>foto URL:</label>
-      <input type='text' onChange={handleChange}  placeholder='***' id='photo' name='photo'></input>
-      <button type='button' onClick={handleSubmit}>Registrarme!</button>
+    <form className='containerForm' actions='' onSubmit={handleSubmit} method='post'>
+      <h2>Registrarse</h2>
+      <div className='containerInput'>
+        <label className='label' for='name'>Nombre</label>
+        <input className='input' type='text' onChange={handleChange} id='name' placeholder='Juan' name='name'></input>
+        <label className='label' for='lastName'>Apellido</label>
+        <input className='input' type='text' onChange={handleChange} id='lastName' placeholder='Perez' name='lastName'></input>
+        <label className='label' for='email'>Correo</label>
+        <input className='input' type='text' onChange={handleChange} id='email' placeholder='ejemplo@ejemplo.com' name='email'></input>
+        <label className='label' for='password'>Contraseña</label>
+        <input className='input' type='password' onChange={handleChange}  placeholder='******' id='password' name='password'></input>
+        <label className='label' for='photo'>foto URL</label>
+        <input className='input' type='text' onChange={handleChange}  placeholder='https://...' id='photo' name='photo'></input>
+      </div>
+      <button className='btnRegistrarse' type='button' onClick={handleSubmit}>Registrarme!</button>
     </form>
   )
 }
