@@ -29,7 +29,7 @@ const store = configureStore({
         [tShirt.reducerPath]: tShirt.reducer,
         [authApi.reducerPath]: authApi.reducer,
 
-        user: UserStatus
+        user: UserStatus,
         cart: persistedReducer
 
     },
