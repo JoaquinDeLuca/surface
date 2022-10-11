@@ -4,6 +4,7 @@ import hoodie from './actions/hoodieAPI'
 import userApi from './actions/userAPI'
 import capApi from './actions/capAPI'
 import tShirt from './actions/tShirtAPI'
+import authApi from './actions/authAPI'
 //reducers
 import CartReducer from './Cart/CartSlice.jsx'
 
@@ -16,6 +17,8 @@ const store = configureStore({
         [userApi.reducerPath]: userApi.reducer,
         [capApi.reducerPath]: capApi.reducer,
         [tShirt.reducerPath]: tShirt.reducer,
+        [authApi.reducerPath]: authApi.reducer,
+
 
         cart: CartReducer
 
@@ -24,7 +27,7 @@ const store = configureStore({
 
     middleware: (getDefaultMiddleware) =>
         getDefaultMiddleware()
-            .concat(hoodie.middleware, capApi.middleware, userApi.middleware, tShirt.middleware)
+            .concat(hoodie.middleware, capApi.middleware, userApi.middleware, tShirt.middleware, authApi.middleware)
 
 })
 

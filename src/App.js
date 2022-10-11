@@ -9,6 +9,7 @@ import Tshirt from './pages/Tshirt';
 import Cap from './pages/Cap';
 import ShoppingCart from './pages/ShoppingCart';
 import Cart from './pages/Cart'
+import SignUpPage from './pages/SignUpPage'
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           <Route path='/tshirt' element={<Tshirt />} />
           <Route path='/cap' element={<Cap />} />
           <Route path='/shoppingcart/:id' element={<ShoppingCart />} />
+          <Route path='/signup' element={<SignUpPage/>} />
         </Routes>
       </BrowserRouter>
     </>
