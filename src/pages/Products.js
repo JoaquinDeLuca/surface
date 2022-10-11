@@ -5,7 +5,6 @@ import Productss from '../components/products/Products'
 const Products = () => {
     return (
         <Layout>
-            <div>Producto</div>
             <Productss />
         </Layout>
     )

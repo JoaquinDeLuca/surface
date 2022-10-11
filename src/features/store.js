@@ -8,8 +8,17 @@ import authApi from './actions/authAPI'
 //reducers
 import CartReducer from './Cart/CartSlice.jsx'
 import UserStatus from './actions/UserStatus'
+// Persist 
+import { persistReducer } from 'redux-persist'
+import storage from 'redux-persist/lib/storage'
 
+const persistConfig = {
+    key: 'root',
+    version: 1,
+    storage,
+}
 
+const persistedReducer = persistReducer(persistConfig, CartReducer)
 
 
 const store = configureStore({
@@ -20,16 +29,20 @@ const store = configureStore({
         [tShirt.reducerPath]: tShirt.reducer,
         [authApi.reducerPath]: authApi.reducer,
 
-
-        cart: CartReducer,
         user: UserStatus
-
+        cart: persistedReducer
 
     },
 
     middleware: (getDefaultMiddleware) =>
         getDefaultMiddleware()
-            .concat(hoodie.middleware, capApi.middleware, userApi.middleware, tShirt.middleware, authApi.middleware)
+            .concat(
+                hoodie.middleware,
+                capApi.middleware, 
+                userApi.middleware, 
+                tShirt.middleware, 
+                authApi.middleware
+            )
 
 })
 
