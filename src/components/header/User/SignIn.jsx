@@ -52,12 +52,12 @@ const SignIn = () => {
   }
 
   return (
-    <form onSubmit={handleSubmit} method='post'>
-      <label for='email'>Correo:</label>
-      <input type='text' onChange={handleChange} id='email' placeholder='ejemplo@ejemplo.com' name='email'></input>
-      <label for='password'>Contraseña:</label>
-      <input type='password' onChange={handleChange}  placeholder='***' id='password' name='password'></input>
-      <button type='button' onClick={handleSubmit}>Iniciar sesion!</button>
+    <form className='containerForm' onSubmit={handleSubmit} method='post'>
+      <label className='label' for='email'>Correo:</label>
+      <input className='input' type='text' onChange={handleChange} id='email' placeholder='ejemplo@ejemplo.com' name='email'></input>
+      <label className='label' for='password'>Contraseña:</label>
+      <input className='input' type='password' onChange={handleChange}  placeholder='*****' id='password' name='password'></input>
+      <button className='btnRegistrarse'  type='button' onClick={handleSubmit}>Iniciar sesion!</button>
     </form>
   )
 }
