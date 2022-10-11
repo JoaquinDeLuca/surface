@@ -10,6 +10,7 @@ import Cap from './pages/Cap';
 import ShoppingCart from './pages/ShoppingCart';
 import Cart from './pages/Cart'
 import SignUpPage from './pages/SignUpPage'
+import SignInPage from './pages/SignInPage'
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
           <Route path='/cap' element={<Cap />} />
           <Route path='/shoppingcart/:id' element={<ShoppingCart />} />
           <Route path='/signup' element={<SignUpPage/>} />
+          <Route path='/signin' element={<SignInPage/>} />
         </Routes>
       </BrowserRouter>
     </>

@@ -26,9 +26,9 @@ const authApi = createApi({
         })
       }),
 
-      SingOut: builder.mutation({
+      SignOut: builder.mutation({
         query: (payload) => ({
-            url: '/singOut',
+            url: '/signout',
             method: 'POST',
             body: payload
         })
