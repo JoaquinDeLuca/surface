@@ -26,7 +26,6 @@ export default function SignUp() {
       .unwrap()
       .then( res => console.log(res) )
       .catch( err => console.error(err) )
-    e.currentTarget.reset()
   }
 
   function handleChange(e){
