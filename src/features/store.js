@@ -7,6 +7,7 @@ import tShirt from './actions/tShirtAPI'
 import authApi from './actions/authAPI'
 //reducers
 import CartReducer from './Cart/CartSlice.jsx'
+import UserStatus from './actions/UserStatus'
 
 
 
@@ -20,7 +21,8 @@ const store = configureStore({
         [authApi.reducerPath]: authApi.reducer,
 
 
-        cart: CartReducer
+        cart: CartReducer,
+        user: UserStatus
 
 
     },

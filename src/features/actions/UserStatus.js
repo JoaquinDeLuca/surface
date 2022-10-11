@@ -1,9 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
     
 const initialState = {
-    products: [],
-    totalAmout: 0,
-    totalCount: 0
+    id: null,
+    name: null,
+    email: null,
+    photo: null,
+    role: null,
 }
 const userSlice = createSlice({
 
@@ -13,15 +15,22 @@ const userSlice = createSlice({
    
 
     reducers:{
-        setCart: (state, actions) =>{
-                state.totalCount++
-                state.products=[...state.products,actions.payload]
+        setCredentials: (state, actions) =>{
+                state.id = actions.payload.id
+                state.name = actions.payload.name
+                state.email = actions.payload.email
+                state.photo = actions.payload.photo
+                state.role = actions.payload.role
+                
          },
-         setPrice:(state,actions) =>{
-            state.totalAmout+= actions.payload
-         }
+         removeCredentials: (state,actions) =>{
+            state.name = null
+            state.email = null
+            state.photo = null
+            state.role = null
+        }
     }
 })
 
 export default userSlice.reducer
-export const { setCart, setPrice } = userSlice.actions
+export const { setCredentials, removeCredentials } = userSlice.actions
