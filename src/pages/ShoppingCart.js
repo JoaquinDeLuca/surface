@@ -1,5 +1,4 @@
 import { useParams } from 'react-router-dom'
-import Layout from '../layout/Layout'
 
 export default function ShoppingCart() {
   
@@ -9,9 +8,7 @@ export default function ShoppingCart() {
 
   return (
     <>
-        <Layout>
-            Cart
-        </Layout>
+      Cart
     </>
   )
 }

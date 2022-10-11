@@ -24,6 +24,7 @@ const userSlice = createSlice({
                 
          },
          removeCredentials: (state,actions) =>{
+            state.id = null
             state.name = null
             state.email = null
             state.photo = null

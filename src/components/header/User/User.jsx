@@ -75,7 +75,7 @@ const {totalCount} = useSelector(state => state.cart)
         {userImg === null ? <AiOutlineUser size='28px'  onClick={changeDisplay}  style={{width:'54px', borderRadius:'100%', cursor:'pointer'}} /> : <img style={{width:'54px', height:'54px', borderRadius:'100%', cursor:'pointer'}} onClick={changeDisplay} src={userImg} alt='user'/>}
         
       </div>
-      <div className='dropDown' style={{display, position: 'absolute', right:'5px'}}>
+      <div className='dropDown' style={{display}}>
         {menuOptions}
       </div>
     </>
