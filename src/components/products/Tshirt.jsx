@@ -3,7 +3,7 @@ import {useGetTShirtQuery} from '../../features/actions/tShirtAPI'
 import './product.css'
 import { Link } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
-import { setCart, setPrice } from '../../features/Cart/CartSlice'
+import { addToCart } from '../../features/Cart/CartSlice'
 
 
 export default function Tshirt() {
@@ -22,8 +22,7 @@ export default function Tshirt() {
   }
 
   const addCart = (item) =>{
-    dispatch(setCart(item.target.id))
-    dispatch(setPrice(Number(item.target.title)))
+    dispatch(addToCart(item))
   }
 
   function generateCard(param){
@@ -42,7 +41,7 @@ export default function Tshirt() {
           <div className='addCart'>
             <div>Futuro select</div>
             <Link style={{ textDecoration: "none"}}  to={`/shoppingcart/${param._id}`} ><div className='buttonAddCart' >Ver mas</div></Link>
-         <div className='buttonAddCart' title={param.price} id={param._id}  onClick={addCart}>Añadir al carrito</div>
+         <div className='buttonAddCart' onClick={() => addCart(param)}>Añadir al carrito</div>
           </div>
         </div>
       </div>
