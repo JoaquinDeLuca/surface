@@ -72,7 +72,7 @@ const {totalCount} = useSelector(state => state.cart)
       <div className='userContent-img'>
         {totalCount}
         <Link to='/cart' style={{ color: "white"}}><AiOutlineShoppingCart  size='28px' className='cart'/></Link>
-        {userImg === null ? <AiOutlineUser size='28px'  onClick={changeDisplay}  style={{width:'54px', borderRadius:'100%', cursor:'pointer'}} /> : <img style={{width:'54px', height:'54px', borderRadius:'100%', cursor:'pointer'}} onClick={changeDisplay} src={userImg} alt='user'/>}
+        {userImg === null ? <AiOutlineUser className='UserIcon' size='28px'  onClick={changeDisplay} /> : <img className="imgUser" onClick={changeDisplay} src={userImg} alt='user'/>}
         
       </div>
       <div className='dropDown' style={{display}}>
