@@ -14,7 +14,7 @@ export default function NavBar() {
         <div className="brand-img">
         </div>
         <div className="brand-name">
-          <h1>Surface</h1>
+          <img className='logoText' src="LogoText.png" alt="surfaceLogo" />
         </div>
       </div>
       <div className="user">
