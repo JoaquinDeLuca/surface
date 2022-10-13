@@ -28,20 +28,16 @@ export default function Tshirt() {
   function generateCard(param){
     return(
       <div key={param._id} className='cardProduct'>
-        <div className='imgContainer'>
-          <img src={param.photo} alt='tshirt'/>
-        </div>
+      <Link className='cardPhoto'  to={`/shoppingcart/${param._id}`}>
+        <img src={param.photo} alt='tshirt'/>
+      </Link>
         <div className='cardBody'>
-          <h3>X nombre</h3>
-          <p className='asd'>Descripcion: {param.description}</p>
-          <div className='cardData'>
-            <p>Stock: {param.stock}</p>
-            <p>Precio: ${param.price}</p>
+          <div className='cardInfo'>
+            <h3>{param.name}</h3>
+            <p>${param.price}</p>
           </div>
-          <div className='addCart'>
-            <div>Futuro select</div>
-            <Link style={{ textDecoration: "none"}}  to={`/shoppingcart/${param._id}`} ><div className='buttonAddCart' >Ver mas</div></Link>
-         <div className='buttonAddCart' onClick={() => addCart(param)}>Añadir al carrito</div>
+          <div className='buttonAddCart' onClick={ () => addCart(param)}>
+            Añadir al carrito
           </div>
         </div>
       </div>
@@ -49,8 +45,10 @@ export default function Tshirt() {
   }
 
   return (
-    <div className="container">
+    <div className="pageContainer">
+      <div className='productsContainer'>
         {data.map(generateCard)}
+      </div>
     </div>
   )
 }

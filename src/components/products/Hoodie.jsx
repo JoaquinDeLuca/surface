@@ -45,13 +45,14 @@ export default function Hoodie() {
                   </div>
                 </div>
               </div>
-
         )
     }
 
     return (
         <div className="pageContainer">
+          <div className='productsContainer'>
             {data.map(PrintHoodie)}
+          </div>
         </div>
     )
 }

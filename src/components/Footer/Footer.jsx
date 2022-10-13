@@ -18,7 +18,7 @@ export default function Footer() {
     <>
     <div className='Footer-container'>
       <div className='Footer-logo'>
-        <h3>SurFace</h3>
+        <img src="LogoText.png" alt="surfaceLogo" />
       </div>
 
      <div className='Footer-redes'>

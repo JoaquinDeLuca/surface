@@ -30,31 +30,30 @@ const addCart = (item) =>{
 
 function generateCard(item){
   return(
-    <div key={item._id} className='cardProduct'>
-      <div className='imgContainer'>
-        <img src={item.photo} alt='tshirt'/>
-      </div>
-      <div className='cardBody'>
-        <h3>{item.name}</h3>
-        <p className='asd'>Descripcion: {item.description}</p>
-        <div className='cardData'>
-          <p>Stock: {item.stock}</p>
-          <p>Precio: ${item.price}</p>
+        <div key={item._id} className='cardProduct'>
+        <Link className='cardPhoto'  to={`/shoppingcart/${item._id}`}>
+          <img src={item.photo} alt='tshirt'/>
+        </Link>
+          <div className='cardBody'>
+            <div className='cardInfo'>
+              <h3>{item.name}</h3>
+              <p>${item.price}</p>
+            </div>
+            <div className='buttonAddCart' onClick={ () => addCart(item)}>
+              Añadir al carrito
+            </div>
+          </div>
         </div>
-        <div className='addCart'>
-        <Link style={{ textDecoration: "none"}}  to={`/shoppingcart/${item._id}`}><div className='buttonAddCart' >Ver mas</div></Link>
-         <div className='buttonAddCart' onClick={() => addCart(item)}>Añadir al carrito</div>
-        </div>
-      </div>
-    </div>
   )
 }
 
 
 
   return (
-    <div className="container">
-        {data.map(generateCard)}
+    <div className="pageContainer">
+    <div className='productsContainer'>
+      {data.map(generateCard)}
     </div>
+  </div>
   )
 }
