@@ -1,11 +1,14 @@
 import React, {useEffect, useState} from 'react'
 import {useAddUserSignUpMutation} from '../../../features/actions/authAPI.js'
 import './SignUp.css'
+import swal from 'sweetalert'
+import { useNavigate } from "react-router-dom";
+
 
 export default function SignUp() {
 
   const [singUp] = useAddUserSignUpMutation()
-
+  const navigate = useNavigate()
   const [name, setName] = useState('')
   const [lastName, setLastName] = useState('')
   const [email, setEmail] = useState('')
@@ -23,10 +26,48 @@ export default function SignUp() {
 
   function handleSubmit(e){
     e.preventDefault()
-    singUp(userData)
+    
+    if(name.length <= 2){
+      swal({
+        title: "Ingresa un nombre valido!",
+        icon: "error",
+      });
+    }else if(lastName.length <= 2){
+      swal({
+        title: "Ingresa un apellido valido!",
+        icon: "error",
+        
+      });
+    }else if( email.length <= 7 ){
+      swal({
+        title: "Ingresa un email valido!",
+        icon: "error",
+        
+      });
+    }else if(password.length <= 5){
+      swal({
+        title: "Su contraseña debe tener mas de 5 caracteres!",
+        icon: "error",
+        
+      });
+    }else if(photo.length <= 8){
+      swal({
+        title: "Ingresa una url valida!",
+        icon: "error",
+      });
+    }else{
+      singUp(userData)
       .unwrap()
       .then( res => console.log(res) )
-      .catch( err => console.error(err) )
+      swal({
+        title: "Te registraste con exito!",
+        icon: "success",
+        text: "Revisa tu email para verificar tu cuenta :)",
+        onClose: navigate('/signin'),
+      });
+      e.target.reset()
+    }
+
   }
 
   function handleChange(e){
@@ -50,9 +91,11 @@ export default function SignUp() {
       default:
         break;
     }
+
   }
 
   return (
+    
     <form className='containerForm' actions='' onSubmit={handleSubmit} method='post'>
       <h2>Registrarse</h2>
       <div className='containerInput'>
@@ -67,7 +110,7 @@ export default function SignUp() {
         <label className='label' for='photo'>foto URL</label>
         <input className='input' type='text' onChange={handleChange}  placeholder='https://...' id='photo' name='photo'></input>
       </div>
-      <button className='btnRegistrarse' type='button' onClick={handleSubmit}>Registrarme!</button>
+      <button className='btnRegistrarse' type='submit'>Registrarme!</button>
     </form>
   )
 }

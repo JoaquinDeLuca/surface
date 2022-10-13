@@ -1,0 +1,103 @@
+.topThreeContainer{
+  display:flex;
+  flex-direction: column;
+  justify-content:space-evenly;
+  align-items: center;
+  gap: 1.2rem;
+  margin: 1rem 0;
+  z-index: -2;
+}
+
+.red{
+  color: red;
+}
+
+.white{
+  color: white
+}
+
+.cardTopContainer{
+  display:flex;
+  flex-direction: column;
+  justify-content:space-evenly;
+  width:90%;
+  margin: auto;
+  background: rgb(34,40,49);
+  border-radius:1rem;
+  color: white;
+  gap:0.5rem
+}
+
+.imgContainer{
+  width: 90%;
+  height: 150px;
+}
+
+.imgContainer img{
+  object-fit: cover;
+  height: 100%;
+}
+
+.courseData{
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  margin: auto;
+  background-color:rgb(57,62,70);
+  padding: 0.3rem;
+  border-radius:1rem;
+}
+
+.userCreatorLikes{
+  display: flex;
+  align-items:row;
+  gap:1rem;
+  justify-content: space-evenly;
+  width:90%;
+  margin: 1rem auto;
+}
+
+.userCreatorLikes img{
+  border-radius:100%;
+  object-fit: cover;
+}
+
+.userData{
+  display: flex;
+  gap: 1rem
+}
+
+.courseData h3{
+  text-align: center
+}
+
+.likesContainer{
+  display: flex;
+  flex-direction: row;
+  justify-content:center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.like{
+  cursor:pointer;
+}
+@media (min-width: 950px) {
+  .topThreeContainer{
+    flex-direction: row;
+    width: 90%;
+    margin: 2rem auto
+  }
+
+  .courseData p{
+    margin: 0;
+    padding: 0.5rem;
+  }
+
+  .cardTopContainer{
+    width:295px;
+    gap:0;
+    justify-content:center;
+    align-items:center;
+  }
+}
