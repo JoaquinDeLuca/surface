@@ -43,7 +43,6 @@ const User = () => {
           <p>{userName}</p>
           <p>{userEmail}</p>
         </div>,
-        <p className="navLinks2" style={{ margin:'none !important'}}>Editar perfil</p>,
         <p className="navLinks2" style={{ margin:'none !important'}} onClick={handleCloseSession}>Cerrar sesion</p>
       ])
     }
@@ -53,9 +52,8 @@ const User = () => {
         <p>{userName}</p>
         <p>{userEmail}</p>
       </div>,
-      <p className="navLinks2" style={{ margin:'none !important'}}>Editar perfil</p>,
+      <Link style={{ textDecoration: "none", height: "auto !important"}} to={"/createAdmin"}><p className="navLinks2" style={{ margin:'none !important'}}>Crear admin</p></Link>,
       <p className="navLinks2" style={{ margin:'none !important'}} onClick={handleCloseSession}>Cerrar sesion</p>,
-      <p className="navLinks2" style={{ margin:'none !important'}}>Crear admin</p>
     ])}
 
     if(userRole === null){

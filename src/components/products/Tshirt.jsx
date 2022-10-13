@@ -4,9 +4,15 @@ import './product.css'
 import { Link } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { addToCart } from '../../features/Cart/CartSlice'
+import { useSelector } from 'react-redux'
+import swal from 'sweetalert'
+import { useNavigate } from "react-router-dom";
 
 
 export default function Tshirt() {
+
+  const navigate = useNavigate()
+  const userID = useSelector(state => state.user.id)
   const dispatch = useDispatch()
   let query = ''
 
@@ -21,8 +27,32 @@ export default function Tshirt() {
     data = shirts.response
   }
 
-  const addCart = (item) =>{
-    dispatch(addToCart(item))
+  const addCart = (item) => {
+    if(userID !== null){
+      dispatch(addToCart(item))
+    }else{
+      swal({
+        title: "Inicia sesion para agregar al carrito!",
+        icon: "warning",
+        buttons:{
+          ok: 'Ok!',
+          iniciarSesion: {
+            text: "Inicia Sesion!",
+            value: "singIn"
+          },
+        }
+      }).then((value) => {
+        switch (value) {
+      
+          case "singIn":
+            navigate('/signin')
+            break;
+      
+          default:
+            console.log('');
+        }
+      });
+    }
   }
 
   function generateCard(param){
