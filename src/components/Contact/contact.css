@@ -1,8 +1,9 @@
 .containerContact{
     display: flex;
     justify-content: space-around;
-    height: 80.5vh;
+    min-height: 80.5vh;
     align-items: center;
+    flex-wrap: wrap;
 }
 .btnSend{
     display: flex;
