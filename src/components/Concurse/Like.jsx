@@ -24,7 +24,6 @@ const Like = (props) => {
           if (like === 'white') {
             setLike('red')
             setLikeCount(likeCount + 1)
-            // likeDislike(props.itinerary)
             const like = {
               postId: props.postId,
               userId: props.userId
@@ -33,7 +32,11 @@ const Like = (props) => {
           } else {
             setLike('white')
             setLikeCount(likeCount - 1)
-            // likeDislike(props.itinerary)
+            const like = {
+              postId: props.postId,
+              userId: props.userId
+            }
+            likeDislike(like)
           }
         }else{
           swal({
