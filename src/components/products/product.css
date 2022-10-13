@@ -2,11 +2,20 @@
   min-height: 82vh;
   background-color: rgb(11, 16, 21);
   display:flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   padding-top: 20px;
-  gap: 1rem;
   width: 100%;
   flex-wrap: wrap;
+}
+h1 {
+  color: white;
+}
+.productsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
 }
 .product {
   text-decoration: none;
@@ -20,7 +29,7 @@
   justify-content: center;
   width: 290px;
   height: 450px;
-  border-top-left-radius: 1rem;
+  border-top-left-radius: 3rem;
   border-bottom-left-radius: 1rem;
   border-bottom-right-radius: 1rem;
   color: white;
@@ -34,6 +43,7 @@
 .cardPhoto {
   height: 70%;
   width: 100%;
+  background-color: white;
 }
 .cardPhoto img {
   object-fit: cover;
@@ -53,7 +63,9 @@
 
 .cardInfo {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
+  align-items: center;
+  width: 95%;
 }
 
 .cardBody h3{
@@ -62,6 +74,8 @@
   font-weight: 500;
 }
 .cardBody p{
+  width: 30%;
+  text-align: right;
   font-weight: 700;
   font-size: 24px;
 }

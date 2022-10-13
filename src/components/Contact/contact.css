@@ -1,9 +1,11 @@
 .containerContact{
     display: flex;
     justify-content: space-around;
-    min-height: 80.5vh;
+    min-height: 82vh;
     align-items: center;
     flex-wrap: wrap;
+    background-color: rgb(11, 16, 21);
+    color: white;
 }
 .btnSend{
     display: flex;
@@ -13,8 +15,6 @@
     margin-bottom: 12px;
     cursor: pointer;
     transition: all 0.3s ease 0s;
-   
-
 }
 
 .btnSend:hover{
@@ -28,6 +28,9 @@
     transform: translateY(-1px);
 }
 
+.label {
+    color: white;
+}
 
 
 @media (min-width: 768px) {

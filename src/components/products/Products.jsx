@@ -7,12 +7,10 @@ export default function ProductsStore() {
   return (
     <>
       <div className='PageContainer'>
-        <h2>Productos</h2>
         <div className='CardContainer'>
             <img className='img' src={'https://i.postimg.cc/132Q6DjZ/buzo1-removebg-preview.png'} alt='Buzos' />
             <div className=''>
               <h3>Buzos</h3>
-              <p>Descripcion</p>
               <button className='btn'>
                 <Link className='link' to='/hoodie'>Ver más</Link>
               </button>
@@ -23,7 +21,6 @@ export default function ProductsStore() {
             <img className='img' src={'https://i.postimg.cc/NG319J1x/D-NQ-NP-715257-MLA43248628033-082020-W-removebg-preview.png'} alt='Remeras'/>
             <div>
               <h3>Remeras</h3>
-              <p>Descripcion</p>
               <button className='btn'>
                 <Link className='link' to='/tshirt'>Ver más</Link>
               </button>
@@ -34,7 +31,6 @@ export default function ProductsStore() {
             <img className='img' src={'https://i.postimg.cc/0QmyLfb8/Gorra-removebg-preview.png'} alt='Gorras'/>
             <div>
               <h3>Gorras</h3>
-              <p>Descripcion</p>
               <button className='btn'>
                 <Link className='link' to='/cap'>Ver más</Link>
               </button>
