@@ -1,12 +1,17 @@
 import React, {useState, useEffect} from 'react';
 import {useSignInMutation} from '../../../features/actions/authAPI.js'
 import * as jose from 'jose'
-import { useSelector, useDispatch } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import {setCredentials} from '../../../features/actions/UserStatus.js'
+import swal from 'sweetalert'
+import { useNavigate } from "react-router-dom";
+
 
 
 
 const SignIn = () => {
+
+  const navigate = useNavigate()
   const dispatch = useDispatch()
   const [singIn] = useSignInMutation()
   const [email, setEmail] = useState('')
@@ -18,7 +23,7 @@ const SignIn = () => {
     from: 'form'
   }
 
-  async function handleSubmit(e){
+    async function handleSubmit(e){
     e.preventDefault()
     try{
       const user = await singIn(userData)
@@ -32,8 +37,19 @@ const SignIn = () => {
         role: userDecoded.role,
       }
       dispatch(setCredentials(dataUser))
+      swal({
+        title: "Iniciaste sesion con exito!",
+        icon: "success",
+        onClose: navigate('/'),
+      });
+      e.target.reset()
     }catch(err){
       console.error(err)
+      swal({
+        title: "Sus credenciales no son validas",
+        text: "Ingreso mal sus credenciales o no verifico su cuenta!",
+        icon: "error",
+      });
     }
     
   }
@@ -59,7 +75,7 @@ const SignIn = () => {
         <label className='label' for='password'>Contraseña</label>
         <input className='input' type='password' onChange={handleChange}  placeholder='******' id='password' name='password'></input>
       </div>
-      <button className='btnRegistrarse'  type='button' onClick={handleSubmit}>Iniciar sesion!</button>
+      <button className='btnRegistrarse'  type='submit' >Iniciar sesion!</button>
     </form>
   )
 }
