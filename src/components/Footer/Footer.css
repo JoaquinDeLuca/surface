@@ -1,6 +1,7 @@
 .Footer-container{
     background-color: #222831;
     color: #EEEEEE;
+    height: 8vh;
 }
 .Footer-logo{
     display: flex;
