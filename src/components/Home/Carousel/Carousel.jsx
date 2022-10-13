@@ -33,25 +33,25 @@ const Carousel = () => {
 
   function ImgCarousel(params) {
     return(
-      <div className='asd'>
-        <img src={params.photo} alt='nasi' style={{width:'auto', height:'200px', border: '1px solid black'}}/>
+      <div className='carousel-imgContainer'>
+        <img className='carousel-img' src={params.photo} alt='productoDestacado'/>
       </div>
     )
   }
 
 
   var settings = {
-    dots: true,
+    dots: false,
     infinite: true,
     speed: 1000,
     slidesToShow: 1,
     slidesToScroll: 1,
-    autoplay:true,
+    autoplay:false,
   };
   
   return (
-    <div style={{border:'1px solid black', width:'70%', margin: 'auto'}}>
-    <Slider {...settings} style={{width: '100%',height:'200px', margin:'50px auto', padding: '0 20px'}}>
+    <div className='carouselContainer'>
+    <Slider {...settings} style={{width: '100%',height:'100%', margin:'50px auto', padding: '0 20px'}}>
       {data.map(ImgCarousel)}
     </Slider>
     </div>

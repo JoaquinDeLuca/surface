@@ -1,5 +1,7 @@
 import  { useRef } from "react";
 import emailjs from '@emailjs/browser';
+import MapView from "./Map/MapView";
+import './contact.css'
 
 const Contact = () => {
   
@@ -19,25 +21,25 @@ const Contact = () => {
   
   
     return (
-    <div>
-      <div>
-        <h2>Nuestra sucursal</h2>
-        <div>mapa</div>
-      </div>
-
-      <div>
-        <h2> Contactanos!</h2>
-        <form ref={form} onSubmit={sendEmail}>
-          <label>Nombre</label>
-          <input type="text" name="user_name" />
-          <label>Email</label>
-          <input type="email" name="user_email" />
-          <label>Mensaje</label>
-          <textarea name="message" />
-          <input type="submit" value="Send" />
-        </form>
-      </div>
-    </div>
+        <div className="containerContact">
+        <div>
+          <h2>Nuestra sucursal</h2>
+          <MapView/>
+        </div>
+  
+        <div>
+          <h2> Contactanos!</h2>
+          <form ref={form} onSubmit={sendEmail}>
+            <label className="label" >Nombre</label>
+            <input className="input" type="text" name="user_name" />
+            <label className="label" >Email</label>
+            <input className="input" type="email" name="user_email" />
+            <label className="label" >Mensaje</label>
+            <textarea className="input" name="message" />
+            <input className="btnSend" type="submit" value="Enviar" />
+          </form>
+        </div>
+   </div>
   );
 };
 

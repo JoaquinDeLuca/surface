@@ -5,7 +5,7 @@
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  height: 85px;
+  height: 10vh;
   align-items: center;
 }
 
@@ -29,12 +29,20 @@
   color: white;
 }
 
+.logoText {
+  height: 40px;
+  display: none;
+}
+
 @media (min-width: 1024px) {
   .burguer{
     display: none
   }
+  .logoText {
+    display: block;
+  }
 
   .navLinks2:hover{
-    color: #FFD369
+    color: #BEF202
   }
 }

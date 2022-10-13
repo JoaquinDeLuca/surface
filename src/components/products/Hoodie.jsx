@@ -3,7 +3,7 @@ import { useGetHoodieQuery } from '../../features/actions/hoodieAPI';
 import './product.css'
 import { Link, useParams } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { setCart, setPrice } from '../../features/Cart/CartSlice';
+import { setCart, setPrice, addToCart } from '../../features/Cart/CartSlice';
 
 export default function Hoodie() {
   const dispatch = useDispatch()
@@ -24,36 +24,33 @@ export default function Hoodie() {
         data = hoodie.response
     }
     // console.log(hoodie)
-    const addCart = (item) =>{
-      dispatch(setCart(item.target.id))
-      dispatch(setPrice(Number(item.target.title)))
+    const addCart = (item) => {
+      // console.log(item)
+      dispatch(addToCart(item))
     }
 
     const PrintHoodie = (hoodie) => {
         return(
-            <div key={hoodie._id} className='cardProduct'>
-              <div className='imgContainer'>
+              <div key={hoodie._id} className='cardProduct'>
+              <Link className='cardPhoto'  to={`/shoppingcart/${hoodie._id}`}>
                 <img src={hoodie.photo} alt='tshirt'/>
-              </div>
-              <div className='cardBody'>
-                <h3>{hoodie.name}</h3>
-                <p className='p'>Descripcion: {hoodie.description}</p>
-                <div className='cardData'>
-                  <p>Stock: {hoodie.stock}</p>
-                  <p>Precio: ${hoodie.price}</p>
-                </div>
-                <div className='addCart'>
-                  <div>Futuro select</div>
-                  <Link style={{ textDecoration: "none"}}  to={`/shoppingcart/${hoodie._id}`} ><div className='buttonAddCart' >Ver mas</div></Link>
-         <div className='buttonAddCart' title={hoodie.price} id={hoodie._id}  onClick={addCart}>Añadir al carrito</div>
+              </Link>
+                <div className='cardBody'>
+                  <div className='cardInfo'>
+                    <h3>{hoodie.name}</h3>
+                    <p>${hoodie.price}</p>
+                  </div>
+                  <div className='buttonAddCart' onClick={ () => addCart(hoodie)}>
+                    Añadir al carrito
+                  </div>
                 </div>
               </div>
-            </div>
+
         )
     }
 
     return (
-        <div className="container">
+        <div className="pageContainer">
             {data.map(PrintHoodie)}
         </div>
     )
