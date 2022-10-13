@@ -4,7 +4,7 @@ import './product.css'
 import { Link } from 'react-router-dom'
 import { useReadAllQuery } from '../../features/actions/capAPI'
 import { useDispatch } from 'react-redux'
-import { setCart, setPrice } from '../../features/Cart/CartSlice'
+import { addToCart } from '../../features/Cart/CartSlice'
 
 
 export default function Cap() {
@@ -25,8 +25,7 @@ if (isSuccess) {
 
 
 const addCart = (item) =>{
-  dispatch(setCart(item.target.id))
-  dispatch(setPrice(Number(item.target.title)))
+  dispatch(addToCart(item))
 }
 
 function generateCard(item){
@@ -44,7 +43,7 @@ function generateCard(item){
         </div>
         <div className='addCart'>
         <Link style={{ textDecoration: "none"}}  to={`/shoppingcart/${item._id}`}><div className='buttonAddCart' >Ver mas</div></Link>
-         <div className='buttonAddCart' title={item.price} id={item._id}  onClick={addCart}>Añadir al carrito</div>
+         <div className='buttonAddCart' onClick={() => addCart(item)}>Añadir al carrito</div>
         </div>
       </div>
     </div>
