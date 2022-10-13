@@ -1,11 +1,17 @@
 import React from 'react'
 import { useGetHoodieQuery } from '../../features/actions/hoodieAPI';
 import './product.css'
-import { Link, useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { setCart, setPrice, addToCart } from '../../features/Cart/CartSlice';
+import { addToCart } from '../../features/Cart/CartSlice';
+import { useSelector } from 'react-redux'
+import swal from 'sweetalert'
+import { useNavigate } from "react-router-dom";
 
 export default function Hoodie() {
+
+  const navigate = useNavigate()
+  const userID = useSelector(state => state.user.id)
   const dispatch = useDispatch()
     let params = ''
     const { 
@@ -25,8 +31,31 @@ export default function Hoodie() {
     }
     // console.log(hoodie)
     const addCart = (item) => {
-      // console.log(item)
-      dispatch(addToCart(item))
+      if(userID !== null){
+        dispatch(addToCart(item))
+      }else{
+        swal({
+          title: "Inicia sesion para agregar al carrito!",
+          icon: "warning",
+          buttons:{
+            ok: 'Ok!',
+            iniciarSesion: {
+              text: "Inicia Sesion!",
+              value: "singIn"
+            },
+          }
+        }).then((value) => {
+          switch (value) {
+         
+            case "singIn":
+              navigate('/signin')
+              break;
+         
+            default:
+              console.log('');
+          }
+        });
+      }
     }
 
     const PrintHoodie = (hoodie) => {

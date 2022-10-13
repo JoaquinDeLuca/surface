@@ -12,6 +12,7 @@ import Cart from './pages/Cart'
 import SignUpPage from './pages/SignUpPage'
 import SignInPage from './pages/SignInPage'
 import Layout from './layout/Layout';
+import CreateAdminPage from './pages/CreateAdminPage'
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
             <Route path='/shoppingcart/:id' element={<ShoppingCart />} />
             <Route path='/signup' element={<SignUpPage/>} />
             <Route path='/signin' element={<SignInPage/>} />
+            <Route path='/createAdmin' element={<CreateAdminPage/>} />
           </Routes>
         </Layout>
       </BrowserRouter>

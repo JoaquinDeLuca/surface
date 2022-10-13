@@ -16,8 +16,16 @@ const authApi = createApi({
           body: payload,
         }),
       }),
-  
 
+      CreateAdmin: builder.mutation({
+        query: (payload) => ({
+          url: '/createAdmin',
+          method: 'POST',
+          body: payload,
+        }),
+      }),
+      
+  
       AddUserSignUp: builder.mutation({
         query: (payload) => ({
             url: '/signup',
@@ -42,5 +50,6 @@ export default authApi
 export const { 
   useSignInMutation,
   useAddUserSignUpMutation,
-  useSignOutMutation
+  useSignOutMutation,
+  useCreateAdminMutation
 } = authApi
