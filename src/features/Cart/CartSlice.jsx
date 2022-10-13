@@ -16,10 +16,11 @@ const cartSlice = createSlice({
         addToCart: (state, actions) => {
             const itemIndex = state.products.findIndex( item => item._id === actions.payload._id)
             if (itemIndex >= 0){
-                state.products[itemIndex].cartQuantity += 1
-                state.totalCount++
-                state.totalAmout+= actions.payload.price
-
+                if (state.products[itemIndex].cartQuantity < actions.payload.stock){
+                    state.products[itemIndex].cartQuantity += 1
+                    state.totalCount++
+                    state.totalAmout+= actions.payload.price
+                }
             } else {
 
                 const tempProduct = { ...actions.payload, cartQuantity: 1}
