@@ -2,8 +2,73 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10px;
+    gap: 3rem;
     min-height: 82vh;
     background-color: rgb(11, 16, 21);
     color: white;
+}
+
+.calidad {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+}
+    .calidad p {
+        width: 60%;
+        text-align: center;
+    }
+    .calidad h2 {
+        margin: 0;
+    }
+
+.galeriaContainer {
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+    .galeriaContainer img {
+        height: 340px;
+        object-fit: cover;
+        border-radius: 1rem;
+    }
+
+.rutaDeCompra {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: whitesmoke;
+    width: 100%;
+    padding: 30px 0px;
+    color: black;
+}
+    .rutaDeCompra h3 {
+        font-weight: 300;
+        margin-bottom: 0;
+    } 
+    .rutaDeCompra h2 {
+        font-size: 35px;
+        margin-top: 0;
+    }
+
+.rutaDeCompraIcons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 50px;
+}
+    .boxIcon {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+.icon {
+    background-color: #222831;
+    padding: 30px;
+    border-radius: 360%;
+    color:#BEF202;
 }
