@@ -2,6 +2,7 @@ import React from 'react';
 import Like from './Like'
 import { useReadAllQuery } from '../../features/actions/ConcurseAPI'
 import { useSelector } from 'react-redux';
+import './cardsTop.css'
 
 
 const AllPosts = () => {
@@ -14,34 +15,27 @@ const AllPosts = () => {
   } = useReadAllQuery();
 
   function generateCards(data){
-
-
     return(
-    <div className='cardTopContainer'>
-      <div className='postContainer'>
-        <div className='imgContainer'>
-          <img style={{width:'100%'}} src={data.photo} alt={'foto del curso: ' + data.course} />
+      <div class="card">
+        <div class="card-img">
+          <img src={data.photo} alt={'foto del curso: ' + data.course}/>
         </div>
-        <div className='courseData'>
-          <h3>{`${data.college} ${data.course}`}</h3>
-          <p>Descripcion del curso: {data.description}</p>
+        <div class="card-info">
+          <p class="text-title">{data.college} {data.course}</p>
+          <p class="text-body">{data.description}</p>
+          <div class="card-button">
+            <img style={{width: '50px'}} src={data.name.photo} alt={data.name.name}/>
+            <p>{data.name.name}</p>
+            <Like like={data.likes} postId={data._id} userId={userID}/>
+          </div>
         </div>
       </div>
-      <div className='userCreatorLikes'>
-        <div className='userData'>
-          <img style={{width: '50px'}} src={data.name.photo} alt={`Perfil de ${data.name.name}}`}/>
-          <p>{data.name.name}</p>
-        </div>
-        <Like like={data.likes} postId={data._id} userId={userID}/>
-      </div>
-    </div>
     )
   }
 
-
   return (
-    <div>
-      <h3>Todos los post:</h3>
+    <div className='posts'>
+      <h2 className='postsTitle'>Todos los post:</h2>
       <div className="PostsContainer">
         {isSuccess ? info.concurses.map(generateCards) : null}
       </div>
