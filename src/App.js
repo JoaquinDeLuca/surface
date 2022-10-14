@@ -14,6 +14,7 @@ import SignInPage from './pages/SignInPage'
 import Layout from './layout/Layout';
 import CreateAdminPage from './pages/CreateAdminPage'
 import EditProduct from './pages/EditProduct';
+import CrearConcurse from './pages/CrearConcurse';
 
 //Redux
 import { useSelector } from 'react-redux'
@@ -41,6 +42,7 @@ function App() {
             <Route path='/signin' element={<SignInPage/>} />
             <Route path='/createAdmin' element={<CreateAdminPage/>} />
             <Route path='/editproduc/:id' element={<EditProduct />} />
+            <Route path='/crearconcurso' element={<CrearConcurse />} />
           </Routes>
         </Layout>
       </BrowserRouter>
