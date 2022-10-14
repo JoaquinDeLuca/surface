@@ -4,6 +4,8 @@ import './Cart.css'
 import { useDispatch } from 'react-redux';
 import { removeCartItem, decrease, addToCart, clearCart } from '../../features/Cart/CartSlice';
 import { AiOutlinePlus, AiOutlineDelete, AiOutlineMinus } from "react-icons/ai";
+import swal from 'sweetalert'
+
 
 const CartComponent = () => {
   const {products, totalAmout, totalCount} = useSelector(state => state.cart)
@@ -13,7 +15,16 @@ const CartComponent = () => {
 
   const clear = () => {
     console.log("vacias carro")
+    swal({
+      title: "Tu compra se realizo con exito!",
+      icon: "success",
+      buttons:{
+        ok: 'Ok!',
+      }
+    })
+
     dispatch(clearCart())
+
   }
   // Function Remove, Add,  subtract Products
   const dispatch = useDispatch()
