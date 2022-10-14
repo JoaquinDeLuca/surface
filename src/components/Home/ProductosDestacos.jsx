@@ -23,9 +23,9 @@ export default function ProductosDestacos() {
 
     return (
         <>
-            <h2 className='h3'>Productos Destacados</h2>
+            <h2 className='h3'>Nuestros productos</h2>
             <div className='container'>
-                {data.slice(1,5).map( (hoodies, index )=> <PrintProduct className={index %2 === 0 ? 'normal' : 'reverse'} key={hoodies.price} data={hoodies} /> ) }
+                {data.slice(1,2).map( (hoodies, index )=> <PrintProduct className={index %2 === 0 ? 'normal' : 'reverse'} key={hoodies.price} data={hoodies} /> ) }
             </div>
         </>
     )
