@@ -80,6 +80,17 @@
 .like{
   cursor:pointer;
 }
+
+.divDelete{
+  cursor: pointer;
+  color: red;
+  display: flex;
+  width: 40px;
+  justify-content: center;
+  background-color: white;
+  border-radius: 100%;
+}
+
 @media (min-width: 950px) {
   .topThreeContainer{
     flex-direction: row;
