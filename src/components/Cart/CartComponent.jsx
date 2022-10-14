@@ -2,14 +2,19 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 import './Cart.css'
 import { useDispatch } from 'react-redux';
-import { removeCartItem, decrease, addToCart } from '../../features/Cart/CartSlice';
+import { removeCartItem, decrease, addToCart, clearCart } from '../../features/Cart/CartSlice';
 import { AiOutlinePlus, AiOutlineDelete, AiOutlineMinus } from "react-icons/ai";
 
 const CartComponent = () => {
   const {products, totalAmout, totalCount} = useSelector(state => state.cart)
-  // console.log(products)
-  // console.log(totalAmout)
 
+  const arrayProducts = useSelector( state => state.cart.products)
+  console.log(arrayProducts)
+
+  const clear = () => {
+    console.log("vacias carro")
+    dispatch(clearCart())
+  }
   // Function Remove, Add,  subtract Products
   const dispatch = useDispatch()
 
@@ -61,9 +66,22 @@ const CartComponent = () => {
 
   return (
     <div className='cartContainerPrincipal'>
-      {products.map(showProduct)}
-      <h3 className='totalAndML'>Total: ${totalAmout}</h3>
-      <p className='totalAndML'>Pagar con ML</p>
+      { arrayProducts != 0 
+      ? 
+        products.map(showProduct) 
+      :  
+        <> <h2>Añade productos al carrito</h2> </>
+      }
+      {arrayProducts == 0 ?
+       <></> 
+      : 
+      <>
+        <button className='cartbtnDelete' onClick={() => clear()} >Vaciar Carrito</button>
+        <h3 className='totalAndML'>Total: ${totalAmout}</h3>
+        <p className='totalAndML'>Pagar</p>
+      </>
+      }
+      
     </div>
   )
 }
