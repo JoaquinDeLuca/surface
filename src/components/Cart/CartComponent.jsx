@@ -70,7 +70,7 @@ const CartComponent = () => {
       ? 
         products.map(showProduct) 
       :  
-        <> <h2>Añade productos al carrito</h2> </>
+        <> <h2 className='cartEmpty'>Añade productos al carrito!</h2> </>
       }
       {arrayProducts == 0 ?
        <></> 
@@ -78,7 +78,7 @@ const CartComponent = () => {
       <>
         <button className='cartbtnDelete' onClick={() => clear()} >Vaciar Carrito</button>
         <h3 className='totalAndML'>Total: ${totalAmout}</h3>
-        <p className='totalAndML'>Pagar</p>
+        <button className='cartbtnPay' onClick={() => clear()} >Pagar</button>
       </>
       }
       

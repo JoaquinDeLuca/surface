@@ -4,7 +4,7 @@
   display:flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 20px;
+  padding: 20px 0px;
   width: 100%;
   flex-wrap: wrap;
 }
@@ -15,7 +15,8 @@ h1 {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 1rem;
+  gap: 2rem;
+  width: 80%;
 }
 .product {
   text-decoration: none;
