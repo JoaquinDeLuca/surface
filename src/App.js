@@ -13,8 +13,16 @@ import SignUpPage from './pages/SignUpPage'
 import SignInPage from './pages/SignInPage'
 import Layout from './layout/Layout';
 import CreateAdminPage from './pages/CreateAdminPage'
+import EditProduct from './pages/EditProduct';
+
+//Redux
+import { useSelector } from 'react-redux'
 
 function App() {
+
+  let user = useSelector( state => state.user)
+  // console.log(user)
+
   return (
     <>
       <BrowserRouter>
@@ -32,6 +40,7 @@ function App() {
             <Route path='/signup' element={<SignUpPage/>} />
             <Route path='/signin' element={<SignInPage/>} />
             <Route path='/createAdmin' element={<CreateAdminPage/>} />
+            <Route path='/editproduc/:id' element={<EditProduct />} />
           </Routes>
         </Layout>
       </BrowserRouter>

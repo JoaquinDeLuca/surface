@@ -7,11 +7,15 @@ import { addToCart } from '../../features/Cart/CartSlice';
 import { useSelector } from 'react-redux'
 import swal from 'sweetalert'
 import { useNavigate } from "react-router-dom";
+import { AiTwotoneEdit, AiOutlineDelete  } from "react-icons/ai";
+import { useDeleteProductMutation } from '../../features/actions/product';
 
 export default function Hoodie() {
 
   const navigate = useNavigate()
   const userID = useSelector(state => state.user.id)
+  const user   = useSelector(state => state.user)
+  console.log(user)
   const dispatch = useDispatch()
     let params = ''
     const { 
@@ -58,6 +62,38 @@ export default function Hoodie() {
       }
     }
 
+    // delete Product
+    const [deleteProduct] = useDeleteProductMutation()
+
+    const handleDelete = (id) => {
+      swal({
+        title: "Estas seguro que desea Borrar el producto?",
+        icon: "warning",
+        buttons:{
+          no: 'No',
+          iniciarSesion: {
+            text: "Si",
+            value: "Si"
+          },
+        }
+      }).then((value) => {
+        switch (value) {
+          case "Si":
+            deleteProduct({id: id})
+            swal({
+              title: "Borraste el producto",
+              icon: "success",
+              buttons:{
+                ok: 'Ok!'
+              }
+            })
+            break;
+          default:
+            console.log('');
+        }
+      });
+    }
+
     const PrintHoodie = (hoodie) => {
         return(
               <div key={hoodie._id} className='cardProduct'>
@@ -66,10 +102,19 @@ export default function Hoodie() {
               </Link>
                 <div className='cardBody'>
                   <div className='cardInfo'>
+                  {/* //_____________Admin___________________ */}
+                  { user.role !== "user" && user !== null ?
+                      <div  style={{cursor: "pointer", color: "black" }}>
+                      <Link  style={{color: "black" }} to={`/editproduc/${hoodie._id}`}> <AiTwotoneEdit size="30"/> </Link>  
+                        <AiOutlineDelete onClick={() => handleDelete(hoodie._id)} size="30"  /> 
+                      </div> 
+                    :
+                      <></>
+                  }
                     <h3>{hoodie.name}</h3>
                     <p>${hoodie.price}</p>
                   </div>
-                  <div className='buttonAddCart' onClick={ () => addCart(hoodie)}>
+                  <div className='buttonAddCart' onClick={ () => addCart(hoodie._id)}>
                     Añadir al carrito
                   </div>
                 </div>
