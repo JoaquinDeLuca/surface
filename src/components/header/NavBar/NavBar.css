@@ -1,0 +1,47 @@
+.navbar{
+  width: 100%;
+  background-color:#222831;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  height: 10vh;
+  align-items: center;
+}
+
+.brand{
+  width: 33vw;
+  display: flex;
+  justify-content:center;
+  align-items: center;
+}
+
+.user{
+  display: flex;
+  justify-content: center;
+  align-items:center;
+  width: 33vw
+}
+
+.navLinks2{
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  color: white;
+}
+
+.logoText {
+  height: 40px;
+  display: none;
+}
+@media (min-width: 1024px) {
+  .burguer{
+    display: none
+  }
+  .logoText {
+    display: block;
+  }
+
+  .navLinks2:hover{
+    color: #BEF202
+  }
+}

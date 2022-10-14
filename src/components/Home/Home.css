@@ -1,0 +1,90 @@
+.container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 25px;
+}
+
+.normal, .reverse{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+}
+
+.Img{
+    width: 300px;
+    height: 320px;
+    border: 2px solid rgba(0, 0, 0, 0.867);
+    background-color: white;
+    object-fit: contain;
+    border-top-left-radius: 3rem;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+}
+
+.container-p{
+    width: 80%;
+    padding: 8px;
+}
+.p{
+    margin: 10px;
+}
+
+.h3{
+    text-align: center;
+    margin: 30px;
+}
+
+@media (min-width: 768px) {
+    .normal, .reverse{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        margin: 10px;
+    }
+    .container-p{
+        width: 30%;
+    }
+}
+
+@media (min-width: 990px) {
+    .normal, .reverse{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        margin: 10px;
+    }
+
+    .reverse{
+        flex-direction: row-reverse;
+        margin: 0;
+    }
+
+    .Img{
+        width: 250px;
+        height: 250px;
+    }
+
+    .reverse .p{
+        margin-right: 40px;
+    }
+    .normal .p{
+        margin-left: 40px;
+    }
+    .container-p{
+        width: 30%;
+    }
+}
+
+@media (min-width: 1240px) {
+    .Img{
+        width: 350px;
+        height: 350px;
+    }
+    .p{
+       font-size: 1.2rem;
+    }
+}

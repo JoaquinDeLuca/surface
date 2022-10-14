@@ -1,0 +1,11 @@
+.leaflet-container{
+    width: 290px;
+    height: 450px;
+    z-index: 0;
+}
+
+@media (min-width: 1024px) {
+    .leaflet-container {
+        width: 420px;
+    }
+}

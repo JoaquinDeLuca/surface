@@ -1,0 +1,93 @@
+.pageContainer{
+  min-height: 82vh;
+  background-color: rgb(11, 16, 21);
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 0px;
+  width: 100%;
+  flex-wrap: wrap;
+}
+h1 {
+  color: white;
+}
+.productsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  width: 80%;
+}
+.product {
+  text-decoration: none;
+  height: 100%;
+}
+
+.cardProduct {
+  display: flex;
+  flex-direction:column;
+  align-items: center;
+  justify-content: center;
+  width: 290px;
+  height: 450px;
+  border-top-left-radius: 3rem;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  color: white;
+  overflow: hidden;
+  transition: all 0.5s;
+}
+  .cardProduct:hover {
+    transform: translateY(-0.5rem);
+  }
+
+.cardPhoto {
+  height: 70%;
+  width: 100%;
+  background-color: white;
+}
+.cardPhoto img {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+
+.cardBody{
+  height: 30%;
+  width: 100%;
+  background: linear-gradient(135deg,#ff57b9,#a704fd);
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cardInfo {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 95%;
+}
+
+.cardBody h3{
+  width: 70%;
+  text-align: left;
+  font-weight: 500;
+}
+.cardBody p{
+  width: 30%;
+  text-align: right;
+  font-weight: 700;
+  font-size: 24px;
+}
+
+.buttonAddCart{
+  cursor: pointer;
+  color: black;
+  text-align: center;
+  font-weight: 500;
+  
+  background: linear-gradient(45deg,transparent 5%,#fff 0);
+  box-shadow: 6px 0 0 #BEF202;
+  padding: 10px 14px;
+}

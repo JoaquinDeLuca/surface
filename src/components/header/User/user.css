@@ -1,0 +1,54 @@
+.dropDown{
+  top: 80px;
+  color: white;
+  background-color: #393E46;
+  gap:10px;
+  flex-direction:column;
+  padding:0.5rem 0.5rem;
+  z-index:100;
+  border: 1px solid black;
+  position: absolute;
+}
+
+.navItem{
+  cursor:pointer;
+  padding: 0.1rem;
+  transition: color 0.2s ease-in-out
+}
+
+.navItem:hover{
+  color: #FFD369;
+}
+
+.userContent-img{
+  display: flex;
+  align-items: center;
+}
+
+.cart{
+  margin-right: 0px;
+}
+
+.UserIcon{
+  width: 54px;
+  border-radius: 100%;
+  cursor: pointer;
+}
+
+/* style={{width:'54px', borderRadius:'100%', cursor:'pointer'}}, */
+
+.imgUser{
+  width: 45px;
+  height: 45px;
+  border-radius: 100%;
+  cursor: pointer;
+  margin-left: 5px;
+}
+
+/* style={{width:'45px', height:'45px', borderRadius:'100%', cursor:'pointer'}} */
+
+@media (min-width: 768px) {
+  .cart{
+    margin-right: 25px;
+  }
+}

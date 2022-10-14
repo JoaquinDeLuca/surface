@@ -1,0 +1,217 @@
+.cartContainerPrincipal{
+    display: flex;
+    flex-direction: column-reverse;
+    padding-bottom: 10px;
+    min-height: 82vh;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: rgb(11, 16, 21);
+}
+.totalAndML{
+    text-align: center;
+    color: white;
+}
+
+.container1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-bottom: 1px solid #222831;
+    box-shadow: 1px 2px 10px #393e46ca;
+    padding: 10px;
+
+}
+
+.cartImgContainer{
+    display: flex;
+    justify-content: center;
+}
+.cartImg{
+    width: 180px;
+    height: 200px;
+}
+
+.cartInfo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cartAddAndDecrease{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+    border: 1px solid rgba(0, 0, 0, 0.758);
+    border-radius: 30px;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.572);
+}
+
+.cartbtn{
+    border: none;
+    padding: 8px 20px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    margin: 10px;
+}
+
+.cartbtn:active{
+    transform: translateY(2px);
+    background-color: #FFD369;
+}
+
+.cartbtnDelete{
+    border: none;
+    padding: 8px 20px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    border: 1px solid rgba(0, 0, 0, 0.741);
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.572);
+    margin-bottom: 10px;
+}
+
+.cartbtnDelete:active{
+    transform: translateY(2px);
+    background-color: #FFD369;
+}
+
+.infoP{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #2B2E4A;
+    margin-bottom: 10px;
+}
+.cartContainer{
+    background-color: whitesmoke;
+}
+.cartEmpty{
+    color: white;
+}
+.cartbtnPay{
+    border: none;
+    padding: 8px 20px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    border: 1px solid rgba(0, 0, 0, 0.741);
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.572);
+    margin-bottom: 5px;
+}
+.cartbtnPay:active{
+    transform: translateY(2px);
+    background-color: #FFD369;
+}
+.cartbtnPay:hover{
+    background-color:  #BEF202;
+    transform: translateY(-7px);
+}
+
+@media (min-width: 768px) {
+    .container1{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        border-bottom: 0px solid #222831;
+        box-shadow: 0px 0px 0px #393e46ca;
+    } 
+    .cartContainer{
+        display: flex;
+        align-items: center;
+        border-bottom: 1px solid #222831;
+        box-shadow: 2px 2px 10px #393e46ca;
+        padding: 20px;
+        border-radius: 30px;
+
+    }
+
+    .containerInfo{
+        display: flex;
+        justify-content: flex-end;
+        /* width: 500px; */
+        margin-left: 50px ;
+    }
+    .cartInfo{
+        flex-direction: row;
+    }
+    .infoP{
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin-bottom: 0px;
+        gap: 10px;
+        margin-right: 5px;
+    }
+    .cartP{
+        font-weight: 500;
+    }
+    .cartAddAndDecrease{
+        border: none;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 0px;
+        border-radius: 30px;
+        box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.572);
+    }
+    
+    .cartbtn{
+        border: none;
+        padding: 8px 20px;
+        cursor: pointer;
+        margin: 10px;
+        transition: all 0.3s ease 0s;
+    }
+    .cartbtn:hover{
+        background-color: #222831;
+        color: white;
+        transform: translateY(-7px);
+    }
+    .cartbtn:active{
+        transform: translateY(-1px);
+    }
+    
+    .total{
+        display: flex;
+        justify-content: center;
+    } 
+    .cartbtnDelete{
+        border: none;
+        margin: 0;
+        /* margin-left: 20px; */
+        box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.572);
+        transition: all 0.3s ease 0s;
+    }
+    .cartbtnDelete:hover{
+        background-color:  #BEF202;
+        transform: translateY(-7px);
+    }
+    .cartbtnDelete:active{
+        transform: translateY(-1px);
+    }
+}
+
+@media (min-width:800px) {
+    .containerInfo{
+        width: 500px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

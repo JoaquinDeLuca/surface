@@ -1,0 +1,44 @@
+.containerContact{
+    display: flex;
+    justify-content: space-around;
+    min-height: 82vh;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: rgb(11, 16, 21);
+    color: white;
+    padding-bottom: 20px;
+}
+.btnSend{
+    display: flex;
+    border: none;
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
+.btnSend:hover{
+    color: #EEEEEE;
+    background-color: #05060f;
+    box-shadow: 0px 15px 20px #05060f74;
+    transform: translateY(-7px);
+}
+
+.btnSend:active{
+    transform: translateY(-1px);
+}
+
+.label {
+    color: white;
+}
+
+
+@media (min-width: 768px) {
+    .input{
+        width: 350px;
+    }
+    .containerContact{
+        padding-bottom: 0px
+    }
+}
