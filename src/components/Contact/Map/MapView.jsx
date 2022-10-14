@@ -8,11 +8,11 @@ const MapView = () => {
   
   const mindhub = [-34.621196969507245, -58.36498020136218]
     return (
-    <MapContainer center={mindhub} zoom={15} >
-        <TileLayer
+    <MapContainer style={{zIndex: "0 !important"}} center={mindhub} zoom={15} >
+        <TileLayer style={{zIndex: "0 !important" }}
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"/>
-        <Marker position={mindhub} icon={Icon}/>
+        <Marker style={{zIndex: "0 !important"}} position={mindhub} icon={Icon}/>
   
     
     </MapContainer>

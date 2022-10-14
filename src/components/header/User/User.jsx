@@ -22,6 +22,10 @@ const User = () => {
   const [menuOptions, setMenuOptions] = useState([<Link style={{ textDecoration: "none", height: "auto !important"}} to={"/signup"}><p className="navLinks2" style={{ margin:'none !important'}}>Registrate</p></Link>,
   <Link style={{ textDecoration: "none", height: "auto !important"}} to={"/signin"}><p className="navLinks2" style={{ margin:'none !important'}}>Inicia sesion</p></Link>])
 
+  const change = () => {
+    setDisplay("none")
+  }
+
 
   function changeDisplay(){
     if(display === 'none'){
@@ -32,6 +36,7 @@ const User = () => {
   }
 
   function handleCloseSession(){
+    setDisplay("none")
     dispatch(removeCredentials())
     signOut({id: userID})
   }
@@ -52,13 +57,13 @@ const User = () => {
         <p>{userName}</p>
         <p>{userEmail}</p>
       </div>,
-      <Link style={{ textDecoration: "none", height: "auto !important"}} to={"/createAdmin"}><p className="navLinks2" style={{ margin:'none !important'}}>Crear admin</p></Link>,
+      <Link onClick={change} style={{ textDecoration: "none", height: "auto !important"}} to={"/createAdmin"}><p className="navLinks2" style={{ margin:'none !important'}}>Crear admin</p></Link>,
       <p className="navLinks2" style={{ margin:'none !important'}} onClick={handleCloseSession}>Cerrar sesion</p>,
     ])}
 
     if(userRole === null){
-      setMenuOptions([<Link style={{ textDecoration: "none", height: "auto !important"}} to={"/signup"}><p className="navLinks2" style={{ margin:'none !important'}}>Registrate</p></Link>,
-      <Link style={{ textDecoration: "none", height: "auto !important"}} to={"/signin"}><p className="navLinks2" style={{ margin:'none !important'}}>Inicia sesion</p></Link>])
+      setMenuOptions([<Link onClick={change} style={{ textDecoration: "none", height: "auto !important"}} to={"/signup"}><p className="navLinks2" style={{ margin:'none !important'}}>Registrate</p></Link>,
+      <Link onClick={change} style={{ textDecoration: "none", height: "auto !important"}} to={"/signin"}><p className="navLinks2" style={{ margin:'none !important'}}>Inicia sesion</p></Link>])
     }
     
   },[userRole, userName, userEmail])
