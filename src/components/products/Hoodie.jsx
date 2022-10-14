@@ -7,11 +7,14 @@ import { addToCart } from '../../features/Cart/CartSlice';
 import { useSelector } from 'react-redux'
 import swal from 'sweetalert'
 import { useNavigate } from "react-router-dom";
+import { AiTwotoneEdit, AiOutlineDelete  } from "react-icons/ai";
 
 export default function Hoodie() {
 
   const navigate = useNavigate()
   const userID = useSelector(state => state.user.id)
+  const user   = useSelector(state => state.user)
+  console.log(user)
   const dispatch = useDispatch()
     let params = ''
     const { 
@@ -66,6 +69,15 @@ export default function Hoodie() {
               </Link>
                 <div className='cardBody'>
                   <div className='cardInfo'>
+                  {/* //_____________Admin___________________ */}
+                  { user.role !== "admin" && user !== null ?
+                      <div  style={{cursor: "pointer", color: "black" }}>
+                        <AiTwotoneEdit  size="30"/>
+                        <AiOutlineDelete  size="30"  /> 
+                      </div> 
+                    :
+                      <></>
+                  }
                     <h3>{hoodie.name}</h3>
                     <p>${hoodie.price}</p>
                   </div>
