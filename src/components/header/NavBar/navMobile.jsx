@@ -9,18 +9,14 @@ const NavMobile = () => {
   
   const [open, setOpen] = useState(false)
 
-  function openMenu(){
-    setOpen(true)
-  }
-
-  function closeMenu() {
-    setOpen(false)
+  function handleMenu(){
+    setOpen(!open)
   }
 
   return (
     <nav className={classes.mobileNavigation}>
-      {open === false ? <AiOutlineMenu size='30px' className={classes.Hamburguer} onClick={openMenu}/> : <AiOutlineClose size='30px' className={classes.Hamburguer} onClick={closeMenu}/>}
-      {open && <NavLinks/>}
+      {open === false ? <AiOutlineMenu size='30px' className={classes.Hamburguer} onClick={handleMenu}/> : <AiOutlineClose size='30px' className={classes.Hamburguer} onClick={handleMenu}/>}
+      {open === true ? <NavLinks onClick={handleMenu} />: null}
     </nav>
   );
 }

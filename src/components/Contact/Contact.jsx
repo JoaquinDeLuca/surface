@@ -21,10 +21,10 @@ const Contact = () => {
   
   
     return (
-        <div className="containerContact">
+        <div  className="containerContact">
         <div>
           <h2>Nuestra sucursal</h2>
-          <MapView/>
+          <MapView />
         </div>
   
         <div>

@@ -1,15 +1,16 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
+import api from "../../api";
 
 
 const tShirt = createApi ({
     reducerPath:"tShirtApi",
 
     baseQuery:fetchBaseQuery({
-        baseUrl:'http://localhost:4000'
+        baseUrl: api
     }),
 
     endpoints: (builder) => ({
-        GetTShirt: builder.query({ query: (params) => `/tshirts/${params}` })
+        GetTShirt: builder.query({ query: (params) => `tshirts/${params}` })
     }),
 
 })

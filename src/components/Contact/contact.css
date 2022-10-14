@@ -6,6 +6,7 @@
     flex-wrap: wrap;
     background-color: rgb(11, 16, 21);
     color: white;
+    padding-bottom: 20px;
 }
 .btnSend{
     display: flex;
@@ -36,5 +37,8 @@
 @media (min-width: 768px) {
     .input{
         width: 350px;
+    }
+    .containerContact{
+        padding-bottom: 0px
     }
 }

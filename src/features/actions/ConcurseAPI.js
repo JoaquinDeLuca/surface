@@ -1,10 +1,12 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/dist/query/react";
+import api from "../../api";
+
 
 const concurseApi = createApi({
     reducerPath: 'concurseApi',
 
     baseQuery: fetchBaseQuery({
-        baseUrl: 'http://localhost:4000/concurses'
+        baseUrl: `${api}concurses`
     }),
 
     endpoints: (builder) => ({

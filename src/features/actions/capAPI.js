@@ -1,10 +1,12 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/dist/query/react";
+import api from "../../api";
+
 
 const capApi = createApi({
     reducerPath: 'capApi',
 
     baseQuery: fetchBaseQuery({
-        baseUrl: 'http://localhost:4000/'
+        baseUrl: api
     }),
 
     endpoints: (builder) => ({
@@ -13,7 +15,7 @@ const capApi = createApi({
         }),
 
         readCap: builder.query({
-            query: (id) => `/caps/${id}`
+            query: (id) => `caps/${id}`
         }),
 
         newCap: builder.mutation({
