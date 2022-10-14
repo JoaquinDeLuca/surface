@@ -1,13 +1,16 @@
 .Footer-container{
     background-color: #222831;
     color: #EEEEEE;
-    height: 8vh;
+    min-height: 8vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 }
 .Footer-logo{
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-top: 10px;
 }
 .Footer-logo img {
     height: 30px;
