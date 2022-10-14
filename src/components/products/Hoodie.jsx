@@ -114,7 +114,7 @@ export default function Hoodie() {
                     <h3>{hoodie.name}</h3>
                     <p>${hoodie.price}</p>
                   </div>
-                  <div className='buttonAddCart' onClick={ () => addCart(hoodie._id)}>
+                  <div className='buttonAddCart' onClick={ () => addCart(hoodie)}>
                     Añadir al carrito
                   </div>
                 </div>
