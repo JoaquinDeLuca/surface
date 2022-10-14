@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { useReadOneQuery , useEditProductMutation } from '../features/actions/product';
+import './styles/EditProduct.css'
 
 export default function EditProduct() {
 
@@ -45,7 +46,6 @@ export default function EditProduct() {
         e.target.reset()
     }
 
- 
     const  handleChange = (e) => {
        if(isSuccess){
             switch (e.target.id) {
@@ -73,14 +73,12 @@ export default function EditProduct() {
               default:
                 break;
             }
-
         }
     }
 
-
     return (
-        <>
-            <h2>EditProduct</h2>
+        <div className='EditProduct-Container'>
+            <h2>Editar Producto</h2>
             <form onSubmit={handleSubmit}>
                 <label >Nombre</label>
                 <input onChange={handleChange} id="name" type="text" placeholder={name} />
@@ -90,6 +88,6 @@ export default function EditProduct() {
                 <input onChange={handleChange} id="stock" type="number" placeholder={stock} />
                 <button type='submit'>Enviar</button>
             </form>
-        </>
+        </div>
     )
 }
