@@ -23,12 +23,29 @@ const concurseApi = createApi({
                 body: payload
             })
         }),
-
-
-
+        deleteConcurse: builder.mutation({
+            query: (payload) => ({
+                url: '/',
+                method: 'DELETE',
+                body: payload
+            })
+        }),
+        create: builder.mutation({
+            query: (payload) => ({
+                url: '/',
+                method: 'POST',
+                body: payload
+            })
+        }),
     })
 
 })
 
 export default concurseApi
-export const { useReadAllQuery, useTopThreeQuery, useLikeDislikeMutation } = concurseApi
+export const { 
+    useReadAllQuery, 
+    useTopThreeQuery, 
+    useLikeDislikeMutation, 
+    useDeleteConcurseMutation,
+    useCreateMutation
+ } = concurseApi

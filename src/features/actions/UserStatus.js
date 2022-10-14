@@ -6,6 +6,7 @@ const initialState = {
     email: null,
     photo: null,
     role: null,
+    buyer: null
 }
 const userSlice = createSlice({
 
@@ -21,7 +22,7 @@ const userSlice = createSlice({
                 state.email = actions.payload.email
                 state.photo = actions.payload.photo
                 state.role = actions.payload.role
-                
+                state.buyer = actions.payload.buyer 
          },
          removeCredentials: (state,actions) =>{
             state.id = null
@@ -29,6 +30,7 @@ const userSlice = createSlice({
             state.email = null
             state.photo = null
             state.role = null
+            state.buyer = null
         }
     }
 })

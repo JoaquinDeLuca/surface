@@ -35,6 +35,7 @@ const SignIn = () => {
         email: userDecoded.mail,
         photo: userDecoded.photo,
         role: userDecoded.role,
+        buyer: userDecoded.buyer
       }
       dispatch(setCredentials(dataUser))
       swal({
