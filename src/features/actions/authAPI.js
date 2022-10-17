@@ -42,7 +42,13 @@ const authApi = createApi({
             body: payload
         })
       }),
-
+      itbuyer:  builder.mutation({
+        query: (payload) => ({
+            url: '/buyer',
+            method: 'POST',
+            body: payload
+        })
+      }),
     })
 
 })
@@ -52,5 +58,6 @@ export const {
   useSignInMutation,
   useAddUserSignUpMutation,
   useSignOutMutation,
-  useCreateAdminMutation
+  useCreateAdminMutation,
+  useItbuyerMutation
 } = authApi
