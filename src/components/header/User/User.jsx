@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 import '../NavBar/NavBar.css'
 import {removeCredentials} from '../../../features/actions/UserStatus'
 import {useSignOutMutation} from '../../../features/actions/authAPI'
+import { clearCart } from '../../../features/Cart/CartSlice';
 
 
 const User = () => {
@@ -37,6 +38,7 @@ const User = () => {
 
   function handleCloseSession(){
     setDisplay("none")
+    dispatch(clearCart())
     dispatch(removeCredentials())
     signOut({id: userID})
   }
