@@ -14,9 +14,9 @@ const Home = () => {
                 <h2>Calidad garantizada</h2>
                 <p>Trabajamos con materiales de primera calidad, para que la confección de tus prendas sean más duraderas y fiables</p>
                 <div className='galeriaContainer'>
-                    <img src="http://www.dasmasegresados.com.ar/wp-content/uploads/2021/01/2.jpg" alt=""/>
-                    <img src="http://www.dasmasegresados.com.ar/wp-content/uploads/2021/01/4.jpg" alt=""/>
-                    <img src="http://www.dasmasegresados.com.ar/wp-content/uploads/2021/01/1.jpg" alt=""/>
+                    <img src="https://i.postimg.cc/Jn13759t/maquina-De-Cocer1.jpg" alt=""/>
+                    <img src="https://i.postimg.cc/RhhcKVCB/maquinde-Cocer2.jpg" alt=""/>
+                    <img src="https://i.postimg.cc/WbQMqvQB/buzo-Dise-o3.jpg" alt=""/>
                 </div>
             </div>
             <div className='rutaDeCompra'>
