@@ -5,15 +5,18 @@ import { useDispatch } from 'react-redux';
 import { removeCartItem, decrease, addToCart, clearCart } from '../../features/Cart/CartSlice';
 import { AiOutlinePlus, AiOutlineDelete, AiOutlineMinus } from "react-icons/ai";
 import swal from 'sweetalert'
-
+import { useItbuyerMutation } from '../../features/actions/authAPI';
 
 const CartComponent = () => {
   const {products, totalAmout, totalCount} = useSelector(state => state.cart)
+  const { email } = useSelector(state => state.user )
 
   const arrayProducts = useSelector( state => state.cart.products)
-  console.log(arrayProducts)
+  // console.log(arrayProducts)
 
-  const clear = () => {
+  const [itbuyer] = useItbuyerMutation()
+
+  const clear = async() => {
     console.log("vacias carro")
     swal({
       title: "Tu compra se realizo con exito!",
@@ -23,6 +26,8 @@ const CartComponent = () => {
       }
     })
 
+     await itbuyer({email: email}).then (res => console.log(res))
+    
     dispatch(clearCart())
 
   }
