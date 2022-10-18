@@ -98,7 +98,7 @@ export default function Tshirt() {
         <div className='cardBody'>
           <div className='cardInfo'>
             {/* //_____________Admin___________________ */}
-            { user.role !== "user" && user !== null ?
+            { user.role !== "user" && user.email !== null ?
                 <div  style={{cursor: "pointer", color: "black" }}>
                   <Link style={{color: "black" }} to={`/editproduc/${param._id}`}> <AiTwotoneEdit size="30"/> </Link>  
                   <AiOutlineDelete  onClick={() => handleDelete(param._id)} size="30"  /> 

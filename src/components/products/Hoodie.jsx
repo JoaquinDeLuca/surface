@@ -15,7 +15,7 @@ export default function Hoodie() {
   const navigate = useNavigate()
   const userID = useSelector(state => state.user.id)
   const user   = useSelector(state => state.user)
-  console.log(user)
+  // console.log(user)
   const dispatch = useDispatch()
     let params = ''
     const { 
@@ -103,7 +103,7 @@ export default function Hoodie() {
                 <div className='cardBody'>
                   <div className='cardInfo'>
                   {/* //_____________Admin___________________ */}
-                  { user.role !== "user" && user !== null ?
+                  { user.role !== "user" && user.email !== null ?
                       <div  style={{cursor: "pointer", color: "black" }}>
                       <Link  style={{color: "black" }} to={`/editproduc/${hoodie._id}`}> <AiTwotoneEdit size="30"/> </Link>  
                         <AiOutlineDelete onClick={() => handleDelete(hoodie._id)} size="30"  /> 

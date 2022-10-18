@@ -66,7 +66,7 @@ const Like = (props) => {
   return (
     <div className='likesContainer'>
         <p>{likeCount}</p>
-        <AiFillHeart className={like} size='35' style={{position: 'relative', zIndex:'100'}} onClick={handleLike}/>
+        <AiFillHeart className={like} size='35' style={{position: 'relative', zIndex:'100', cursor: "pointer"}} onClick={handleLike}/>
     </div>
   );
 }
