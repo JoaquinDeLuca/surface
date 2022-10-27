@@ -15,7 +15,6 @@ export default function Hoodie() {
   const navigate = useNavigate()
   const userID = useSelector(state => state.user.id)
   const user   = useSelector(state => state.user)
-  // console.log(user)
   const dispatch = useDispatch()
     let params = ''
     const { 
@@ -33,7 +32,6 @@ export default function Hoodie() {
     if(isSuccess){
         data = hoodie.response
     }
-    // console.log(hoodie)
     const addCart = (item) => {
       if(userID !== null){
         dispatch(addToCart(item))

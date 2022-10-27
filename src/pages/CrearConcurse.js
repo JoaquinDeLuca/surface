@@ -37,7 +37,7 @@ export default function CrearConcurse() {
             course: createCurse.course
         }
 
-        create(newCurse).then( response => console.log(response))
+        create(newCurse)
         .then( response => {
             if(response.data.success === true){
                 swal({
@@ -65,19 +65,19 @@ export default function CrearConcurse() {
     }
 
     return (
-        <>
+        <div style={{minHeight:"82vh", display: "flex", flexDirection: "column", justifyContent:"center", alignItems: "center"}}>
             <h2>Crear Colegio</h2>
-            <form onSubmit={handleSubmit}>
-                <label >Description</label>
-                <input onChange={handleChange} name="description" type="text" required />
-                <label >Photo</label>
-                <input onChange={handleChange} name="photo" type="text" required />
-                <label >Colegio</label>
-                <input onChange={handleChange} name="college" type="text" required />
-                <label >Curse</label>
-                <input onChange={handleChange} name="course" type="text" required />
+            <form style={{minWidth: "70vw"}} onSubmit={handleSubmit}>
+                <label for="description">Description</label>
+                <input id="description" onChange={handleChange} name="description" type="text" required />
+                <label for="photo" >Photo</label>
+                <input id="photo" onChange={handleChange} name="photo" type="text" required />
+                <label for="college">Colegio</label>
+                <input id="college" onChange={handleChange} name="college" type="text" required />
+                <label for="course">Curse</label>
+                <input id="course" onChange={handleChange} name="course" type="text" required />
                 <button type='submit'>Crear</button>
             </form>
-        </>
+        </div>
     )
 }

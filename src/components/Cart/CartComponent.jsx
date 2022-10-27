@@ -1,31 +1,51 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import { useSelector } from 'react-redux'
 import './Cart.css'
 import { useDispatch } from 'react-redux';
 import { removeCartItem, decrease, addToCart, clearCart } from '../../features/Cart/CartSlice';
 import { AiOutlinePlus, AiOutlineDelete, AiOutlineMinus } from "react-icons/ai";
-import swal from 'sweetalert'
+import { useItbuyerMutation } from '../../features/actions/authAPI';
+import { setbuyer } from '../../features/actions/UserStatus';
+import { usePayMutation } from '../../features/actions/Checkout';
+
 
 
 const CartComponent = () => {
-  const {products, totalAmout, totalCount} = useSelector(state => state.cart)
+  const {products, totalAmout} = useSelector(state => state.cart)
+  const { email } = useSelector(state => state.user )
 
   const arrayProducts = useSelector( state => state.cart.products)
-  console.log(arrayProducts)
 
-  const clear = () => {
-    console.log("vacias carro")
-    swal({
-      title: "Tu compra se realizo con exito!",
-      icon: "success",
-      buttons:{
-        ok: 'Ok!',
-      }
-    })
+
+  // clear cart
+  const clear = async() => {
+    dispatch(clearCart())
+  }
+
+  const [itbuyer] = useItbuyerMutation()
+  const [pay] = usePayMutation()
+
+  let productos = [];
+
+  useEffect(()=>{
+    productos = [];
+    products.forEach( item => {
+      productos.push(item)
+    });
+  },[totalAmout])
+
+
+  const toPay = async () => {
+    dispatch(setbuyer())
+    await itbuyer({email: email})
+
+    pay({items: productos}) 
+    .then(res => window.location.replace(res.data.url))
 
     dispatch(clearCart())
-
   }
+
+
   // Function Remove, Add,  subtract Products
   const dispatch = useDispatch()
 
@@ -77,19 +97,19 @@ const CartComponent = () => {
 
   return (
     <div className='cartContainerPrincipal'>
-      { arrayProducts != 0 
+      { arrayProducts !== 0 
       ? 
         products.map(showProduct) 
       :  
         <> <h2 className='cartEmpty'>Añade productos al carrito!</h2> </>
       }
-      {arrayProducts == 0 ?
+      {arrayProducts === 0 ?
        <></> 
       : 
       <>
         <button className='cartbtnDelete' onClick={() => clear()} >Vaciar Carrito</button>
         <h3 className='totalAndML'>Total: ${totalAmout}</h3>
-        <button className='cartbtnPay' onClick={() => clear()} >Pagar</button>
+        <button className='cartbtnPay' onClick={() => toPay()} >Pagar MP</button>
       </>
       }
       

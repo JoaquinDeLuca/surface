@@ -26,8 +26,8 @@ const AllPosts = () => {
   const [deleteProduct] = useDeleteConcurseMutation();
 
   const handleDelete = (id) => {
-    console.log("user")
-    deleteProduct({id : id}).then (response => console.log(response))
+
+    deleteProduct({id : id})
   }
 
 
@@ -58,7 +58,6 @@ const AllPosts = () => {
   }
 
   const handleClick = () => {
-    console.log("dads")
     switch (user.buyer) {
       case true:
         navigate('/crearconcurso')

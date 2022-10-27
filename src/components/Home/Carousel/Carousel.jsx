@@ -25,11 +25,6 @@ const Carousel = () => {
     data = tShirt.response
   }
 
-  useEffect(()=>{
-    
-    console.log(data)
-  },[isSuccess])
-
 
   function ImgCarousel(params) {
     return(

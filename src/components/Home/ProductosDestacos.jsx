@@ -19,7 +19,6 @@ export default function ProductosDestacos() {
     if(isSuccess){
         data = hoodie.response
     }
-    // console.log(hoodie)
 
     return (
         <>
