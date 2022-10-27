@@ -6,6 +6,7 @@ import tShirt from './actions/tShirtAPI'
 import authApi from './actions/authAPI'
 import concurseApi from './actions/ConcurseAPI'
 import products from './actions/product'
+import checkout from './actions/Checkout'
 //reducers
 import CartReducer from './Cart/CartSlice.jsx'
 import UserStatus from './actions/UserStatus'
@@ -37,6 +38,7 @@ const store = configureStore({
         [authApi.reducerPath]: authApi.reducer,
         [concurseApi.reducerPath]: concurseApi.reducer,
         [products.reducerPath]: products.reducer,
+        [checkout.reducerPath]: checkout.reducer,
         
         user: persitedUSer,
         cart: persistedReducer
@@ -51,7 +53,8 @@ const store = configureStore({
                 tShirt.middleware, 
                 authApi.middleware,
                 concurseApi.middleware,
-                products.middleware
+                products.middleware,
+                checkout.middleware
             )
 
 })

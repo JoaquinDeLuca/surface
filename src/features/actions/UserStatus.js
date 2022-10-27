@@ -31,9 +31,12 @@ const userSlice = createSlice({
             state.photo = null
             state.role = null
             state.buyer = null
+        },
+        setbuyer: (state) => {
+            state.buyer = true
         }
     }
 })
 
 export default userSlice.reducer
-export const { setCredentials, removeCredentials } = userSlice.actions
+export const { setCredentials, removeCredentials, setbuyer } = userSlice.actions
