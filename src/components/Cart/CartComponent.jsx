@@ -15,11 +15,10 @@ const CartComponent = () => {
   const { email } = useSelector(state => state.user )
 
   const arrayProducts = useSelector( state => state.cart.products)
-  // console.log(arrayProducts)
+
 
   // clear cart
   const clear = async() => {
-    console.log("vacias carro")
     dispatch(clearCart())
   }
 

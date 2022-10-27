@@ -37,7 +37,7 @@ export default function CrearConcurse() {
             course: createCurse.course
         }
 
-        create(newCurse).then( response => console.log(response))
+        create(newCurse)
         .then( response => {
             if(response.data.success === true){
                 swal({

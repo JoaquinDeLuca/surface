@@ -58,7 +58,6 @@ export default function SignUp() {
     }else{
       singUp(userData)
       .unwrap()
-      .then( res => console.log(res) )
       swal({
         title: "Te registraste con exito!",
         icon: "success",

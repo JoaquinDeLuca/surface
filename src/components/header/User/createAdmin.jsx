@@ -62,7 +62,6 @@ export default function CreateAdmin() {
       if(userRole === 'admin'){
         createAdmin(userData)
         .unwrap()
-        .then( res => console.log(res) )
         swal({
           title: "Creaste el usuario con exito!",
           icon: "success",
