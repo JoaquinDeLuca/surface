@@ -9,6 +9,7 @@ import swal from 'sweetalert'
 import { useNavigate } from "react-router-dom";
 import { AiTwotoneEdit, AiOutlineDelete  } from "react-icons/ai";
 import { useDeleteProductMutation } from '../../features/actions/product';
+import Spinner from '../Spinner/Spinner';
 
 export default function Tshirt() {
 
@@ -21,6 +22,7 @@ export default function Tshirt() {
   const {
     data: shirts,
     isSuccess,
+    isLoading
   } = useGetTShirtQuery(query)
 
   let data = []
@@ -120,6 +122,7 @@ export default function Tshirt() {
   return (
     <div className="pageContainer">
       <div className='productsContainer'>
+        {isLoading && <Spinner />}
         {data.map(generateCard)}
       </div>
     </div>

@@ -7,6 +7,7 @@ import { AiOutlineDelete  } from "react-icons/ai";
 import { useDeleteConcurseMutation } from '../../features/actions/ConcurseAPI';
 import swal from 'sweetalert'
 import { useNavigate } from "react-router-dom";
+import Spinner from '../Spinner/Spinner';
 
 
 const AllPosts = () => {
@@ -18,7 +19,7 @@ const AllPosts = () => {
   const {
     data : info,
     isSuccess,
-    isError
+    isLoading,
   } = useReadAllQuery();
 
 
@@ -33,21 +34,21 @@ const AllPosts = () => {
 
   function generateCards(data){
     return(
-      <div class="card">
-        <div class="card-img">
+      <div className="card" key={data._id}>
+        <div className="card-img">
           <img src={data.photo} alt={'foto del curso: ' + data.course}/>
         </div>
-        <div class="card-info">
-          {user.role !== "user" || user.id === data.name._id ? 
+        <div className="card-info">
+          {user.role === "admin" || user.id === data.name._id ? 
             <div className='divDelete'>
               <AiOutlineDelete onClick={() => handleDelete(data._id)}  size="30" /> 
             </div> 
           : 
           <></>
           }
-          <p class="text-title">{data.college} {data.course}</p>
-          <p class="text-body">{data.description}</p>
-          <div class="card-button">
+          <p className="text-title">{data.college} {data.course}</p>
+          <p className="text-body">{data.description}</p>
+          <div className="card-button">
             <img style={{width: '50px'}} src={data.name.photo} alt={data.name.name}/>
             <p>{data.name.name}</p>
             <Like like={data.likes} postId={data._id} userId={userID}/>
@@ -102,6 +103,7 @@ const AllPosts = () => {
     <div className='posts'>
       <button onClick={handleClick} className='cartbtnDelete'>Participar del concurso</button>
       <h2 className='postsTitle'>Todos los post:</h2>
+      {isLoading && <Spinner text='Cargando todos los post...' />}
       <div className="PostsContainer">
         {isSuccess ? info.concurses.map(generateCards) : null}
       </div>

@@ -9,6 +9,7 @@ import swal from 'sweetalert'
 import { useNavigate } from "react-router-dom";
 import { AiTwotoneEdit, AiOutlineDelete  } from "react-icons/ai";
 import { useDeleteProductMutation } from '../../features/actions/product';
+import Spinner from '../Spinner/Spinner';
 
 
 export default function Cap() {
@@ -19,7 +20,8 @@ export default function Cap() {
   const dispatch = useDispatch()
   const { 
     data: caps,
-    isSuccess
+    isSuccess,
+    isLoading
     
   } = useReadAllQuery()
 
@@ -115,10 +117,12 @@ function generateCard(item){
         </div>
   )
 }
+console.log(isLoading);
 
   return (
     <div className="pageContainer">
     <div className='productsContainer'>
+      {isLoading && <Spinner />}
       {data.map(generateCard)}
     </div>
   </div>

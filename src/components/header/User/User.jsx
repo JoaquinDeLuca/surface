@@ -21,7 +21,7 @@ const User = () => {
   const userRole = useSelector(state => state.user.role)
   const [display, setDisplay] = useState('none')
   const [menuOptions, setMenuOptions] = useState([<Link style={{ textDecoration: "none", height: "auto !important"}} to={"/signup"}><p className="navLinks2" style={{ margin:'none !important'}}>Registrate</p></Link>,
-  <Link style={{ textDecoration: "none", height: "auto !important"}} to={"/signin"}><p className="navLinks2" style={{ margin:'none !important'}}>Inicia sesion</p></Link>])
+  <Link className="navLinks2" to={"/signin"}><p className="navLinks2" style={{ margin:'none !important'}}>Inicia sesion</p></Link>])
 
   const change = () => {
     setDisplay("none")
@@ -59,7 +59,7 @@ const User = () => {
         <p>{userName}</p>
         <p>{userEmail}</p>
       </div>,
-      <Link onClick={change} style={{ textDecoration: "none", height: "auto !important"}} to={"/createAdmin"}><p className="navLinks2" style={{ margin:'none !important'}}>Crear admin</p></Link>,
+      <Link onClick={change} to={"/createAdmin"}><p className="navLinks2" style={{ margin:'none !important'}}>Crear admin</p></Link>,
       <p className="navLinks2" style={{ margin:'none !important'}} onClick={handleCloseSession}>Cerrar sesion</p>,
     ])}
 
@@ -74,7 +74,7 @@ const {totalCount} = useSelector(state => state.cart)
 
   return (
     <>
-      <div className='userContent-img'>
+      <div className='userContent-img'> 
         {totalCount}
         <Link to='/cart' style={{ color: "white"}}><AiOutlineShoppingCart  size='28px' className='cart'/></Link>
         {userImg === null ? <AiOutlineUser className='UserIcon' size='28px'  onClick={changeDisplay} /> : <img className="imgUser" onClick={changeDisplay} src={userImg} alt='user'/>}
