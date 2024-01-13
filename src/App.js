@@ -7,7 +7,6 @@ import Products from './pages/Products'
 import Hoodie from './pages/Hoodie';
 import Tshirt from './pages/Tshirt';
 import Cap from './pages/Cap';
-import ShoppingCart from './pages/ShoppingCart';
 import Cart from './pages/Cart'
 import SignUpPage from './pages/SignUpPage'
 import SignInPage from './pages/SignInPage'
@@ -16,14 +15,7 @@ import CreateAdminPage from './pages/CreateAdminPage'
 import EditProduct from './pages/EditProduct';
 import CrearConcurse from './pages/CrearConcurse';
 
-//Redux
-import { useSelector } from 'react-redux'
-
 function App() {
-
-  let user = useSelector( state => state.user)
-  // console.log(user)
-
   return (
     <>
       <BrowserRouter>
@@ -37,7 +29,6 @@ function App() {
             <Route path='/hoodie' element={<Hoodie />} />
             <Route path='/tshirt' element={<Tshirt />} />
             <Route path='/cap' element={<Cap />} />
-            <Route path='/shoppingcart/:id' element={<ShoppingCart />} />
             <Route path='/signup' element={<SignUpPage/>} />
             <Route path='/signin' element={<SignInPage/>} />
             <Route path='/createAdmin' element={<CreateAdminPage/>} />
