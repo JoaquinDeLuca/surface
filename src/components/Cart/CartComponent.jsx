@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react'
+import React, {useEffect, useState} from 'react'
 import { useSelector } from 'react-redux'
 import './Cart.css'
 import { useDispatch } from 'react-redux';
@@ -7,14 +7,15 @@ import { AiOutlinePlus, AiOutlineDelete, AiOutlineMinus } from "react-icons/ai";
 import { useItbuyerMutation } from '../../features/actions/authAPI';
 import { setbuyer } from '../../features/actions/UserStatus';
 import { usePayMutation } from '../../features/actions/Checkout';
-
-
+import Spinner from '../Spinner/Spinner';
 
 const CartComponent = () => {
   const {products, totalAmout} = useSelector(state => state.cart)
   const { email } = useSelector(state => state.user )
 
   const arrayProducts = useSelector( state => state.cart.products)
+
+  const [loading, setLoading] = useState(false)
 
 
   // clear cart
@@ -28,7 +29,6 @@ const CartComponent = () => {
   let productos = [];
 
   useEffect(()=>{
-    productos = [];
     products.forEach( item => {
       productos.push(item)
     });
@@ -36,13 +36,15 @@ const CartComponent = () => {
 
 
   const toPay = async () => {
+    setLoading(true)
     dispatch(setbuyer())
     await itbuyer({email: email})
 
-    pay({items: productos}) 
+    await pay({items: productos}) 
     .then(res => window.location.replace(res.data.url))
 
     dispatch(clearCart())
+    setLoading(false)
   }
 
 
@@ -64,10 +66,10 @@ const CartComponent = () => {
 
   const showProduct = (item) => {
     return(
-      <div className='container1'>
+      <div className='container1' key={item._id}>
         <div className='cartContainer'>
           <div className='cartImgContainer'>
-            <img className='cartImg' src={item.photo} />
+            <img className='cartImg' src={item.photo} alt={item.name} />
           </div>
           <div className='containerInfo'>
             <div className='cartInfo'>
@@ -97,22 +99,18 @@ const CartComponent = () => {
 
   return (
     <div className='cartContainerPrincipal'>
-      { arrayProducts !== 0 
-      ? 
+      { arrayProducts.length !== 0 ? 
         products.map(showProduct) 
       :  
-        <> <h2 className='cartEmpty'>Añade productos al carrito!</h2> </>
+        <h2 className='cartEmpty'>Añade productos al carrito!</h2>
       }
-      {arrayProducts === 0 ?
-       <></> 
-      : 
+      {arrayProducts.length !== 0 &&
       <>
         <button className='cartbtnDelete' onClick={() => clear()} >Vaciar Carrito</button>
         <h3 className='totalAndML'>Total: ${totalAmout}</h3>
-        <button className='cartbtnPay' onClick={() => toPay()} >Pagar MP</button>
+        {loading ? <Spinner text='Cargando MP...' /> : <button className='cartbtnPay' onClick={() => toPay()}>Pagar Mercado Pago</button>}
       </>
       }
-      
     </div>
   )
 }

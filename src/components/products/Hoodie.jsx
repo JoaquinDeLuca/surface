@@ -9,6 +9,7 @@ import swal from 'sweetalert'
 import { useNavigate } from "react-router-dom";
 import { AiTwotoneEdit, AiOutlineDelete  } from "react-icons/ai";
 import { useDeleteProductMutation } from '../../features/actions/product';
+import Spinner from '../Spinner/Spinner';
 
 export default function Hoodie() {
 
@@ -18,17 +19,16 @@ export default function Hoodie() {
   const dispatch = useDispatch()
     let params = ''
     const { 
-        data: hoodie,
-        isLoading, 
-        isSuccess,
-        
+      data: hoodie,
+      isLoading, 
+      isSuccess,
     } = useGetHoodieQuery(params)
 
     let data = [];
 
-    if(isLoading){
-        data = []
-    }
+    // if(isLoading){
+    //     data = []
+    // }
     if(isSuccess){
         data = hoodie.response
     }
@@ -123,6 +123,7 @@ export default function Hoodie() {
     return (
         <div className="pageContainer">
           <div className='productsContainer'>
+            {isLoading && <Spinner />}
             {data.map(PrintHoodie)}
           </div>
         </div>

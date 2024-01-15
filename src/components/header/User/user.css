@@ -8,12 +8,13 @@
   z-index:100;
   border: 1px solid black;
   position: absolute;
+  border-radius: .5rem;
 }
 
 .navItem{
-  cursor:pointer;
+  cursor: pointer;
   padding: 0.1rem;
-  transition: color 0.2s ease-in-out
+  transition: color 0.2s ease-in-out;
 }
 
 .navItem:hover{

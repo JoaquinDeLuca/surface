@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState } from 'react';
 import {useSignInMutation} from '../../../features/actions/authAPI.js'
 import * as jose from 'jose'
 import { useDispatch } from 'react-redux'
@@ -70,6 +70,7 @@ const SignIn = () => {
 
   return (
     <form className='containerForm' onSubmit={handleSubmit} method='post'>
+      <h2>Iniciar sesión</h2>
       <div className='containerInput'> 
         <label className='label' for='email'>Correo</label>
         <input className='input' type='text' onChange={handleChange} id='email' placeholder='ejemplo@ejemplo.com' name='email'></input>
