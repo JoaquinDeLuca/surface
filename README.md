@@ -2,7 +2,7 @@
 ![https://i.postimg.cc/dQHZMjmd/Surface-Home.png](https://i.postimg.cc/dQHZMjmd/Surface-Home.png)
 
 ## Ejemplo en vivo
-- [https://surface-ashen.vercel.app/](https://surface-ashen.vercel.app/)
+- [https://surface-ashen.vercel.app/](https://surface-beta.vercel.app/)
 - [Back-end](https://github.com/JoaquinDeLuca/surface-back)
 
 ## Tecnologías 🛠
