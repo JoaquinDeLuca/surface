@@ -1,6 +1,11 @@
 # SurFace
 ![https://i.postimg.cc/dQHZMjmd/Surface-Home.png](https://i.postimg.cc/dQHZMjmd/Surface-Home.png)
 
+# Usuario de prueba
+- rejimi1065@kaimdr.com
+- 1234567
+
+
 ## Ejemplo en vivo
 - [https://surface-beta.vercel.app/](https://surface-beta.vercel.app/)
 - [Back-end](https://github.com/JoaquinDeLuca/surface-back)
